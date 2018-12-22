@@ -35,7 +35,7 @@
 	
 	**方法1：重叠构造器** 
 	
-```java
+	```java
 	public class NutritionFacts {
 		private final int servingSize;
 		private final int servings;
@@ -65,11 +65,12 @@
 			this.sodium = sodium;
 			this.carbohydrate = carbohydrate;
 		}
-	}```  
+	}
+	```  
 
 	**方法2：JavaBeans模式** 
 	
-```java
+	```java
 	public class NutritionFactsJBModle {
 		private int servingSize = -1;
 		private int servings = -1;
@@ -107,18 +108,17 @@
 	}
 	
 	//client
-	
-	//client
 	NutritionFactsJBModle cocaCola = new NutritionFactsJBModle();
 	cocaCola.setServingSize(240);
 	cocaCola.setServings(8);
 	cocaCola.setCalories(100);
 	cocaCola.setSodium(35);
-	cocaCola.setCarbohydrate(27);```  
+	cocaCola.setCarbohydrate(27);
+	```  
 
 	**方法3：Builder模式** 
 	
-```java
+	```java
 	public class NutritionFactsBuilderPattern {
 		private int servingSize;
 		private int servings;
@@ -178,7 +178,7 @@
 	//client
 	NutritionFactsBuilderPattern cocaCola = new NutritionFactsBuilderPattern.Builder(240,8).
 	calories(100).sodium(35).carbohydrate(27).builder();
-```
+	```
 
 
 
