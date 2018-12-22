@@ -34,7 +34,7 @@
 	静态工厂和构造器有个共同的局限性：他们都不能很好地扩展到大量的参数。  
 	
 	* 方法1：重叠构造器
-	```
+```
 	public class NutritionFacts {
 	private final int servingSize;
 	private final int servings;
@@ -65,5 +65,4 @@
 		this.carbohydrate = carbohydrate;
 	}
 	
-}
-	```
+	}```
