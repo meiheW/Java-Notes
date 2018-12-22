@@ -116,7 +116,7 @@
 	cocaCola.setCarbohydrate(27);
 	```  
 
-	* 方法3：Builder模式 - builder利用单独的方法来设置每个参数
+	* 方法3：Builder模式 - builder利用单独的方法来设置每个参数  
 	不足之处在于：为了创建对象，必须先创建它的构建器,一般在参数量很大的情况下使用。
 	
 	```java
@@ -181,7 +181,7 @@
 	calories(100).sodium(35).carbohydrate(27).builder();
 	```
 
-
+- 第3条：用私有构造器或者枚举类型强化Singleton属性  
 
 
 
