@@ -33,7 +33,7 @@
 	
 	静态工厂和构造器有个共同的局限性：他们都不能很好地扩展到大量的参数。  
 	
-	*方法1：重叠构造器
+	* 方法1：重叠构造器
 	
 	```java
 	public class NutritionFacts {
@@ -68,7 +68,7 @@
 	}
 	```  
 
-	*方法2：JavaBeans模式
+	* 方法2：JavaBeans模式
 	
 	```java
 	public class NutritionFactsJBModle {
@@ -116,7 +116,7 @@
 	cocaCola.setCarbohydrate(27);
 	```  
 
-	*方法3：Builder模式
+	* 方法3：Builder模式
 	
 	```java
 	public class NutritionFactsBuilderPattern {
