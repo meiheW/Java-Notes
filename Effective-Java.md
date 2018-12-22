@@ -67,6 +67,7 @@
 	}
 
 ```
+
 	* 方法2：JavaBeans模式
 ```java
 	public class NutritionFactsJBModle {
@@ -116,6 +117,7 @@
 	cocaCola.setCarbohydrate(27);
 	
 ```
+
 	* 方法3：Builder模式
 ```java
 	public class NutritionFactsBuilderPattern {
