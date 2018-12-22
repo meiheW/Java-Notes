@@ -11,7 +11,7 @@
 
 ## 创建和销毁对象
 
-- NO1：考虑用静态工厂方法代替构造器  
+- 第1条：考虑用静态工厂方法代替构造器  
 
 	静态工厂方法与构造器相比的优势：  
 
@@ -29,5 +29,41 @@
 	
 	* 实质与其他的静态方法没有任何区别。
 	
-- NO2：遇到多个构造器参数时要考虑用构建器  
+- 第2条：遇到多个构造器参数时要考虑用构建器  
 	
+	静态工厂和构造器有个共同的局限性：他们都不能很好地扩展到大量的参数。  
+	
+	* 方法1：重叠构造器
+	```
+	public class NutritionFacts {
+	private final int servingSize;
+	private final int servings;
+	private final int calories;
+	private final int fat;
+	private final int sodium;
+	private final int carbohydrate;
+	
+	public NutritionFacts(int servingSize, int servings){
+		this(servingSize, servings, 0);
+	}
+	public NutritionFacts(int servingSize, int servings, int calories) {
+		this(servingSize, servings, calories, 0);
+	}
+	public NutritionFacts(int servingSize, int servings, int calories, int fat) {
+		this(servingSize, servings, calories, fat, 0);
+	}
+	public NutritionFacts(int servingSize, int servings, int calories, int fat, int sodium) {
+		this(servingSize, servings, calories, fat, sodium, 0);
+	}
+	
+	public NutritionFacts(int servingSize, int servings, int calories, int fat, int sodium, int carbohydrate) {
+		this.servingSize = servingSize;
+		this.servings = servings;
+		this.calories = calories;
+		this.fat = fat;
+		this.sodium = sodium;
+		this.carbohydrate = carbohydrate;
+	}
+	
+}
+	```
