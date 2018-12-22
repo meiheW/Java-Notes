@@ -66,7 +66,7 @@
 		}
 	}
 
-```
+```  
 
 	* 方法2：JavaBeans模式
 ```java
@@ -116,7 +116,7 @@
 	cocaCola.setSodium(35);
 	cocaCola.setCarbohydrate(27);
 	
-```
+```  
 
 	* 方法3：Builder模式
 ```java
