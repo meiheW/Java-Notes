@@ -13,7 +13,7 @@
 
 - 第1条：考虑用静态工厂方法代替构造器  
 
-	静态工厂方法与构造器相比的优势：  
+	静态工厂方法与构造器相比的**优势**：  
 
 	* 静态工厂方法有名称。
 
@@ -23,7 +23,7 @@
 	
 	* 在创建参数化类型实例的时候，它们使代码变得更加简洁。
 	
-	缺点在于：
+	**缺点**在于：
 	
 	* 类如果不含有公有的或者受保护的构造器，就不能被子类化。
 	
@@ -33,7 +33,7 @@
 	
 	静态工厂和构造器有个共同的局限性：他们都不能很好地扩展到大量的参数。  
 	
-	**方法1：重叠构造器** 
+	*方法1：重叠构造器
 	
 	```java
 	public class NutritionFacts {
@@ -68,7 +68,7 @@
 	}
 	```  
 
-	**方法2：JavaBeans模式** 
+	*方法2：JavaBeans模式
 	
 	```java
 	public class NutritionFactsJBModle {
@@ -116,7 +116,7 @@
 	cocaCola.setCarbohydrate(27);
 	```  
 
-	**方法3：Builder模式** 
+	*方法3：Builder模式
 	
 	```java
 	public class NutritionFactsBuilderPattern {
