@@ -68,7 +68,7 @@
 	}
 	```  
 
-	* 方法2：JavaBeans模式
+	* 方法2：JavaBeans模式 - 阻止了把类做成不可变的可能
 	
 	```java
 	public class NutritionFactsJBModle {
@@ -116,7 +116,8 @@
 	cocaCola.setCarbohydrate(27);
 	```  
 
-	* 方法3：Builder模式
+	* 方法3：Builder模式 - builder利用单独的方法来设置每个参数
+	不足之处在于：为了创建对象，必须先创建它的构建器,一般在参数量很大的情况下使用。
 	
 	```java
 	public class NutritionFactsBuilderPattern {
