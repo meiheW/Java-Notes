@@ -65,9 +65,7 @@
 			this.sodium = sodium;
 			this.carbohydrate = carbohydrate;
 		}
-	}
-
-```  
+	}```  
 
 	**方法2：JavaBeans模式** 
 	
@@ -116,9 +114,7 @@
 	cocaCola.setServings(8);
 	cocaCola.setCalories(100);
 	cocaCola.setSodium(35);
-	cocaCola.setCarbohydrate(27);
-	
-```  
+	cocaCola.setCarbohydrate(27);```  
 
 	**方法3：Builder模式** 
 	
