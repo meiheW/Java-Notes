@@ -35,40 +35,149 @@
 	
 	* 方法1：重叠构造器
 ```java
-public class NutritionFacts {
-	private final int servingSize;
-	private final int servings;
-	private final int calories;
-	private final int fat;
-	private final int sodium;
-	private final int carbohydrate;
+	public class NutritionFacts {
+		private final int servingSize;
+		private final int servings;
+		private final int calories;
+		private final int fat;
+		private final int sodium;
+		private final int carbohydrate;
 
-	public NutritionFacts(int servingSize, int servings){
-		this(servingSize, servings, 0);
+		public NutritionFacts(int servingSize, int servings){
+			this(servingSize, servings, 0);
+		}
+		public NutritionFacts(int servingSize, int servings, int calories) {
+			this(servingSize, servings, calories, 0);
+		}
+		public NutritionFacts(int servingSize, int servings, int calories, int fat) {
+			this(servingSize, servings, calories, fat, 0);
+		}
+		public NutritionFacts(int servingSize, int servings, int calories, int fat, int sodium) {
+			this(servingSize, servings, calories, fat, sodium, 0);
+		}
+		
+		public NutritionFacts(int servingSize, int servings, int calories, int fat, int sodium, int carbohydrate) {
+			this.servingSize = servingSize;
+			this.servings = servings;
+			this.calories = calories;
+			this.fat = fat;
+			this.sodium = sodium;
+			this.carbohydrate = carbohydrate;
+		}
 	}
-	public NutritionFacts(int servingSize, int servings, int calories) {
-		this(servingSize, servings, calories, 0);
-	}
-	public NutritionFacts(int servingSize, int servings, int calories, int fat) {
-		this(servingSize, servings, calories, fat, 0);
-	}
-	public NutritionFacts(int servingSize, int servings, int calories, int fat, int sodium) {
-		this(servingSize, servings, calories, fat, sodium, 0);
+
+```
+	* 方法2：JavaBeans模式
+```java
+	public class NutritionFactsJBModle {
+		private int servingSize = -1;
+		private int servings = -1;
+		private int calories = 0;
+		private int fat = 0;
+		private int sodium = 0;
+		private int carbohydrate = 0;
+		
+		public NutritionFactsJBModle(){}
+
+		//setters
+		public void setServingSize(int servingSize) {
+			this.servingSize = servingSize;
+		}
+
+		public void setServings(int servings) {
+			this.servings = servings;
+		}
+
+		public void setCalories(int calories) {
+			this.calories = calories;
+		}
+
+		public void setFat(int fat) {
+			this.fat = fat;
+		}
+
+		public void setSodium(int sodium) {
+			this.sodium = sodium;
+		}
+
+		public void setCarbohydrate(int carbohydrate) {
+			this.carbohydrate = carbohydrate;
+		}
 	}
 	
-	public NutritionFacts(int servingSize, int servings, int calories, int fat, int sodium, int carbohydrate) {
-		this.servingSize = servingSize;
-		this.servings = servings;
-		this.calories = calories;
-		this.fat = fat;
-		this.sodium = sodium;
-		this.carbohydrate = carbohydrate;
+	//client
+	
+	//client
+	NutritionFactsJBModle cocaCola = new NutritionFactsJBModle();
+	cocaCola.setServingSize(240);
+	cocaCola.setServings(8);
+	cocaCola.setCalories(100);
+	cocaCola.setSodium(35);
+	cocaCola.setCarbohydrate(27);
+	
+```
+	* 方法3：Builder模式
+```java
+	public class NutritionFactsBuilderPattern {
+		private int servingSize;
+		private int servings;
+		private int calories;
+		private int fat;
+		private int sodium;
+		private int carbohydrate;
+		
+		public static class Builder{
+			private int servingSize;
+			private int servings;
+			
+			private int calories = 0;
+			private int fat = 0;
+			private int sodium = 0;
+			private int carbohydrate = 0;
+			
+			public Builder(int servingSize, int servings){
+				this.servingSize = servingSize;
+				this.servings = servings;
+			}
+			public Builder calories(int val){
+				calories = val;
+				return this;
+			}
+			public Builder fat(int val){
+				fat = val;
+				return this;
+			}
+			public Builder sodium(int val){
+				sodium = val;
+				return this;
+			}
+			public Builder carbohydrate(int val){
+				carbohydrate = val;
+				return this;
+			}
+			
+			public NutritionFactsBuilderPattern build(){
+				return new NutritionFactsBuilderPattern(this);
+			}
+			
+		}
+
+		
+		private NutritionFactsBuilderPattern(Builder builder){
+			servingSize = builder.servingSize;
+			servings = builder.servings;
+			calories = builder.calories;
+			fat = builder.fat;
+			sodium = builder.sodium;
+			carbohydrate = builder.carbohydrate;
+		}
+
 	}
 
-}
+	//client
+	NutritionFactsBuilderPattern cocaCola = new NutritionFactsBuilderPattern.Builder(240,8).
+	calories(100).sodium(35).carbohydrate(27).builder();
 ```
-
-
 
 
 
