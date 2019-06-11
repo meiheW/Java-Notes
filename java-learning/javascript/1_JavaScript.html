@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS基础</title>
+
+    <script>
+        //function 对象
+        function fun1(a, b) {
+            alert(a+b);
+        }
+
+        var fun2 = function (a, b) {
+            alert(a-b);
+        }
+        fun1(2,1);
+        fun2(2,1);
+        //函数调用只与函数名有关
+        fun2(2);
+        fun2();
+        fun2(1,2,3);
+
+        //Array 对象
+        var arr = [];
+        var arr1 = new Array();
+        var arr2 = new Array(3);
+
+        //Date 对象
+        var date = new Date();
+        document.write(date.toLocaleString()+"<br/>");
+
+        //Global对象
+        var str = "携程旅行网";
+        var encode = encodeURI(str);
+        document.write(encode+"<br/>");
+
+        var s = decodeURI(encode);
+        document.write(s);
+    </script>
+
+
+
+</head>
+<body>
+
+</body>
+</html>
