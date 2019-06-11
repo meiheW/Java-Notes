@@ -21,11 +21,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="3_BOM.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="3_BOM.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/javascript/3_BOM.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="300">
               <caret line="10" column="17" lean-forward="true" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="4_CarouselMap.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/javascript/4_CarouselMap.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="240">
+              <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -111,6 +121,8 @@
         <option value="$PROJECT_DIR$/javascript/image/BOM.html" />
         <option value="$PROJECT_DIR$/javascript/1_JavaScript.html" />
         <option value="$PROJECT_DIR$/javascript/3_BOM.html" />
+        <option value="$PROJECT_DIR$/javascript/CarouselMap.html" />
+        <option value="$PROJECT_DIR$/javascript/4_CarouselMap.html" />
       </list>
     </option>
   </component>
@@ -147,6 +159,10 @@
       <pane id="ProjectPane">
         <subPane>
           <expand>
+            <path>
+              <item name="java-learning" type="b2602c69:ProjectViewProjectNode" />
+              <item name="idea-test" type="462c0819:PsiDirectoryNode" />
+            </path>
             <path>
               <item name="java-learning" type="b2602c69:ProjectViewProjectNode" />
               <item name="javascript" type="462c0819:PsiDirectoryNode" />
@@ -199,7 +215,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JavaScript Debug.3_BOM.html">
+  <component name="RunManager" selected="JavaScript Debug.4_CarouselMap.html">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="HTML_USED" value="false" />
       <option name="WIDTH" value="400" />
@@ -242,10 +258,10 @@
       <patterns />
     </configuration>
     <configuration name="1_JavaScript.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/java-learning/javascript/1_JavaScript.html" />
-    <configuration name="2_Company.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/java-learning/html/2_Company.html" />
     <configuration name="2_Dom.html" type="JavascriptDebugType" factoryName="JavaScript Debug" nameIsGenerated="true" uri="http://localhost:63342/java-learning/javascript/2_Dom.html" />
     <configuration name="3_BOM.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/java-learning/javascript/3_BOM.html" />
     <configuration name="4_CSS.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/java-learning/html/4_CSS.html" />
+    <configuration name="4_CarouselMap.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/java-learning/javascript/4_CarouselMap.html" />
     <configuration name="5_Register.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/java-learning/html/5_Register.html" />
     <configuration default="true" type="JetRunConfigurationType" factoryName="Kotlin">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
@@ -301,19 +317,19 @@
     </configuration>
     <list size="6">
       <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.2_Dom.html" />
-      <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.2_Company.html" />
-      <item index="2" class="java.lang.String" itemvalue="JavaScript Debug.4_CSS.html" />
-      <item index="3" class="java.lang.String" itemvalue="JavaScript Debug.5_Register.html" />
-      <item index="4" class="java.lang.String" itemvalue="JavaScript Debug.1_JavaScript.html" />
-      <item index="5" class="java.lang.String" itemvalue="JavaScript Debug.3_BOM.html" />
+      <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.4_CSS.html" />
+      <item index="2" class="java.lang.String" itemvalue="JavaScript Debug.5_Register.html" />
+      <item index="3" class="java.lang.String" itemvalue="JavaScript Debug.1_JavaScript.html" />
+      <item index="4" class="java.lang.String" itemvalue="JavaScript Debug.3_BOM.html" />
+      <item index="5" class="java.lang.String" itemvalue="JavaScript Debug.4_CarouselMap.html" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.3_BOM.html" />
-        <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.1_JavaScript.html" />
-        <item index="2" class="java.lang.String" itemvalue="JavaScript Debug.5_Register.html" />
-        <item index="3" class="java.lang.String" itemvalue="JavaScript Debug.4_CSS.html" />
-        <item index="4" class="java.lang.String" itemvalue="JavaScript Debug.2_Company.html" />
+        <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.4_CarouselMap.html" />
+        <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.3_BOM.html" />
+        <item index="2" class="java.lang.String" itemvalue="JavaScript Debug.1_JavaScript.html" />
+        <item index="3" class="java.lang.String" itemvalue="JavaScript Debug.5_Register.html" />
+        <item index="4" class="java.lang.String" itemvalue="JavaScript Debug.4_CSS.html" />
       </list>
     </recent_temporary>
   </component>
@@ -344,7 +360,7 @@
       <workItem from="1560057745050" duration="4998000" />
       <workItem from="1560063684630" duration="1013000" />
       <workItem from="1560075164067" duration="2986000" />
-      <workItem from="1560269515446" duration="890000" />
+      <workItem from="1560269515446" duration="1620000" />
     </task>
     <servers />
   </component>
@@ -357,7 +373,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="48879000" />
+    <option name="totallyTimeSpent" value="49609000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
@@ -408,13 +424,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://D:/JavaTools/Java/jdk-9.0.1/lib/src.zip!/java.sql/java/sql/ResultSet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="679" column="18" lean-forward="false" selection-start-line="679" selection-start-column="18" selection-end-line="679" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/jdbc/src/domain/Qw.java" />
     <entry file="file://$PROJECT_DIR$/jdbc/src/Sig.java" />
     <entry file="file://$PROJECT_DIR$/jdbc/src/domain/Emp.java">
@@ -709,6 +718,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
           <caret line="10" column="17" lean-forward="true" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/javascript/4_CarouselMap.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
           <folding />
         </state>
       </provider>
