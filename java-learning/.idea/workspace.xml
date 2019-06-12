@@ -11,6 +11,26 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
+      <file leaf-file-name="1_JavaScript.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/javascript/1_JavaScript.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="150">
+              <caret line="10" column="9" lean-forward="true" selection-start-line="10" selection-start-column="9" selection-end-line="10" selection-end-column="9" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="5_DynamicTable.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/javascript/5_DynamicTable.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="356">
+              <caret line="135" column="17" lean-forward="true" selection-start-line="135" selection-start-column="17" selection-end-line="135" selection-end-column="17" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="2_Dom.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/javascript/2_Dom.html">
           <provider selected="true" editor-type-id="text-editor">
@@ -31,11 +51,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="4_CarouselMap.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="4_CarouselMap.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/javascript/4_CarouselMap.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="9" column="18" lean-forward="true" selection-start-line="9" selection-start-column="18" selection-end-line="9" selection-end-column="18" />
+            <state relative-caret-position="180">
+              <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -46,16 +66,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="120">
               <caret line="4" column="23" lean-forward="false" selection-start-line="4" selection-start-column="23" selection-end-line="4" selection-end-column="23" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="1_JavaScript.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/javascript/1_JavaScript.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="4" column="15" lean-forward="false" selection-start-line="4" selection-start-column="15" selection-end-line="4" selection-end-column="15" />
               <folding />
             </state>
           </provider>
@@ -159,15 +169,10 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="AndroidView" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
-            <path>
-              <item name="java-learning" type="b2602c69:ProjectViewProjectNode" />
-              <item name="idea-test" type="462c0819:PsiDirectoryNode" />
-            </path>
             <path>
               <item name="java-learning" type="b2602c69:ProjectViewProjectNode" />
               <item name="javascript" type="462c0819:PsiDirectoryNode" />
@@ -177,7 +182,8 @@
         </subPane>
       </pane>
       <pane id="Scratches" />
-      <pane id="Scope" />
+      <pane id="PackagesPane" />
+      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -188,25 +194,25 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
-    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+    <property name="settings.editor.selected.configurable" value="MavenSettings" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="E:\githubProjects\Java-Notes\java-learning\javascript" />
-      <recent name="E:\githubProjects\Java-Notes\java-learning\html\image" />
-      <recent name="E:\githubProjects\Java-Notes\java-learning\html" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="jdbc" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\projects\Java-Notes\java-learning\javascript" />
       <recent name="E:\githubProjects\Java-Notes\java-learning\javascript\image" />
       <recent name="E:\githubProjects\Java-Notes\java-learning\html" />
       <recent name="E:\githubProjects\Java-Notes\java-learning\dbcp\src\datasource\druid" />
       <recent name="E:\githubProjects\Java-Notes\java-learning\dbcp\src" />
-      <recent name="E:\githubProjects\Java-Notes\java-learning\dbcp\libs" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="jdbc" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\githubProjects\Java-Notes\java-learning\javascript" />
+      <recent name="E:\githubProjects\Java-Notes\java-learning\html\image" />
+      <recent name="E:\githubProjects\Java-Notes\java-learning\html" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -221,7 +227,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JavaScript Debug.4_CarouselMap.html">
+  <component name="RunManager" selected="JavaScript Debug.5_DynamicTable.html">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="HTML_USED" value="false" />
       <option name="WIDTH" value="400" />
@@ -266,8 +272,8 @@
     <configuration name="1_JavaScript.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/java-learning/javascript/1_JavaScript.html" />
     <configuration name="2_Dom.html" type="JavascriptDebugType" factoryName="JavaScript Debug" nameIsGenerated="true" uri="http://localhost:63342/java-learning/javascript/2_Dom.html" />
     <configuration name="3_BOM.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/java-learning/javascript/3_BOM.html" />
-    <configuration name="4_CSS.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/java-learning/html/4_CSS.html" />
     <configuration name="4_CarouselMap.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/java-learning/javascript/4_CarouselMap.html" />
+    <configuration name="5_DynamicTable.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/java-learning/javascript/5_DynamicTable.html" />
     <configuration name="5_Register.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/java-learning/html/5_Register.html" />
     <configuration default="true" type="JetRunConfigurationType" factoryName="Kotlin">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
@@ -323,19 +329,19 @@
     </configuration>
     <list size="6">
       <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.2_Dom.html" />
-      <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.4_CSS.html" />
-      <item index="2" class="java.lang.String" itemvalue="JavaScript Debug.5_Register.html" />
-      <item index="3" class="java.lang.String" itemvalue="JavaScript Debug.1_JavaScript.html" />
-      <item index="4" class="java.lang.String" itemvalue="JavaScript Debug.3_BOM.html" />
-      <item index="5" class="java.lang.String" itemvalue="JavaScript Debug.4_CarouselMap.html" />
+      <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.5_Register.html" />
+      <item index="2" class="java.lang.String" itemvalue="JavaScript Debug.1_JavaScript.html" />
+      <item index="3" class="java.lang.String" itemvalue="JavaScript Debug.3_BOM.html" />
+      <item index="4" class="java.lang.String" itemvalue="JavaScript Debug.4_CarouselMap.html" />
+      <item index="5" class="java.lang.String" itemvalue="JavaScript Debug.5_DynamicTable.html" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.4_CarouselMap.html" />
-        <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.3_BOM.html" />
-        <item index="2" class="java.lang.String" itemvalue="JavaScript Debug.1_JavaScript.html" />
-        <item index="3" class="java.lang.String" itemvalue="JavaScript Debug.5_Register.html" />
-        <item index="4" class="java.lang.String" itemvalue="JavaScript Debug.4_CSS.html" />
+        <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.5_DynamicTable.html" />
+        <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.4_CarouselMap.html" />
+        <item index="2" class="java.lang.String" itemvalue="JavaScript Debug.3_BOM.html" />
+        <item index="3" class="java.lang.String" itemvalue="JavaScript Debug.1_JavaScript.html" />
+        <item index="4" class="java.lang.String" itemvalue="JavaScript Debug.5_Register.html" />
       </list>
     </recent_temporary>
   </component>
@@ -369,7 +375,8 @@
       <workItem from="1560269515446" duration="2219000" />
       <workItem from="1560341740986" duration="714000" />
       <workItem from="1560346313080" duration="683000" />
-      <workItem from="1560347746513" duration="5000" />
+      <workItem from="1560347746513" duration="198000" />
+      <workItem from="1560352992640" duration="2019000" />
     </task>
     <servers />
   </component>
@@ -382,7 +389,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="51610000" />
+    <option name="totallyTimeSpent" value="53822000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
@@ -395,19 +402,19 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12" sideWeight="0.27604166" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27242523" sideWeight="0.7239583" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27242523" sideWeight="0.7239583" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19152361" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19420601" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -433,7 +440,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/jdbc/src/domain/Qw.java" />
     <entry file="file://$PROJECT_DIR$/jdbc/src/Sig.java" />
     <entry file="file://$PROJECT_DIR$/jdbc/src/domain/Emp.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -699,22 +705,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/javascript/image/BOM.html" />
-    <entry file="file://$PROJECT_DIR$/html/5_Register.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="4" column="23" lean-forward="false" selection-start-line="4" selection-start-column="23" selection-end-line="4" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/javascript/1_JavaScript.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="4" column="15" lean-forward="false" selection-start-line="4" selection-start-column="15" selection-end-line="4" selection-end-column="15" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/javascript/2_Dom.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="600">
@@ -733,8 +723,32 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/javascript/4_CarouselMap.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="9" column="18" lean-forward="true" selection-start-line="9" selection-start-column="18" selection-end-line="9" selection-end-column="18" />
+        <state relative-caret-position="180">
+          <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html/5_Register.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="4" column="23" lean-forward="false" selection-start-line="4" selection-start-column="23" selection-end-line="4" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/javascript/1_JavaScript.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="9" lean-forward="true" selection-start-line="10" selection-start-column="9" selection-end-line="10" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/javascript/5_DynamicTable.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="356">
+          <caret line="135" column="17" lean-forward="true" selection-start-line="135" selection-start-column="17" selection-end-line="135" selection-end-column="17" />
           <folding />
         </state>
       </provider>
