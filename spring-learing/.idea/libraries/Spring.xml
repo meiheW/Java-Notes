@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Spring" type="spring">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/spring-jar/com.springsource.org.apache.commons.logging-1.1.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/spring-jar/spring-beans-3.2.0.RC2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/spring-jar/spring-context-3.2.0.RC2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/spring-jar/spring-core-3.2.0.RC2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/spring-jar/spring-expression-3.2.0.RC2.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
