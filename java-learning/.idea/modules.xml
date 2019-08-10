@@ -8,6 +8,7 @@
       <module fileurl="file://$PROJECT_DIR$/idea-test/idea-test.iml" filepath="$PROJECT_DIR$/idea-test/idea-test.iml" />
       <module fileurl="file://$PROJECT_DIR$/javascript/javascript.iml" filepath="$PROJECT_DIR$/javascript/javascript.iml" />
       <module fileurl="file://$PROJECT_DIR$/jdbc/jdbc.iml" filepath="$PROJECT_DIR$/jdbc/jdbc.iml" />
+      <module fileurl="file://$PROJECT_DIR$/redis/redis.iml" filepath="$PROJECT_DIR$/redis/redis.iml" />
       <module fileurl="file://$PROJECT_DIR$/tomcat/tomcat.iml" filepath="$PROJECT_DIR$/tomcat/tomcat.iml" />
       <module fileurl="file://$PROJECT_DIR$/webcase/webcase.iml" filepath="$PROJECT_DIR$/webcase/webcase.iml" />
       <module fileurl="file://$PROJECT_DIR$/xml/xml.iml" filepath="$PROJECT_DIR$/xml/xml.iml" />
