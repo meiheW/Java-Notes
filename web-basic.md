@@ -3,12 +3,14 @@ Mysql/JDBC/TOMCAT/Servlet/Cookie/Session/Listener/Filter/Json/Redis
 
 ## JDBC：
 
-1. 概念：Java DataBase Connectivity  Java 数据库连接， Java语言操作数据库
-	JDBC本质：其实是官方（sun公司）定义的一套操作所有关系型数据库的规则，即接口。各个数据库厂商去实现这套接口，提供数据库驱动jar包。我们可以使用这套接口（JDBC）编程，真正执行的代码是驱动jar包中的实现类。
-
+1. 概念： 
+```text
+	Java DataBase Connectivity  Java 数据库连接， Java语言操作数据库
+	JDBC本质：其实是官方（sun公司）定义的一套操作所有关系型数据库的规则，即接口。
+	各个数据库厂商去实现这套接口，提供数据库驱动jar包。我们可以使用这套接口（JDBC）编程，真正执行的代码是驱动jar包中的实现类。
+```
 2. 快速入门：
 ```text
-步骤：
 	1. 导入驱动jar包 mysql-connector-java-5.1.37-bin.jar
 	2. 注册驱动
 	3. 获取数据库连接对象 Connection
