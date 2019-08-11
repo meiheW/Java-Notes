@@ -8,16 +8,16 @@ Mysql/JDBC/TOMCAT/Servlet/Cookie/Session/Listener/Filter/Json/Redis
 	JDBC本质：其实是官方（sun公司）定义的一套操作所有关系型数据库的规则，即接口。  
 	各个数据库厂商去实现这套接口，提供数据库驱动jar包。我们可以使用这套接口（JDBC）编程，真正执行的代码是驱动jar包中的实现类。  
 2. 快速入门：
-```text
-	1. 导入驱动jar包 mysql-connector-java-5.1.37-bin.jar
-	2. 注册驱动
-	3. 获取数据库连接对象 Connection
-	4. 定义sql
-	5. 获取执行sql语句的对象 Statement
-	6. 执行sql，接受返回结果
-	7. 处理结果
-	8. 释放资源
-```
+
+	1. 导入驱动jar包 mysql-connector-java-5.1.37-bin.jar  
+	2. 注册驱动  
+	3. 获取数据库连接对象 Connection  
+	4. 定义sql  
+	5. 获取执行sql语句的对象 Statement  
+	6. 执行sql，接受返回结果  
+	7. 处理结果  
+	8. 释放资源  
+
 	代码实现：
 	```java 
   	//1.导入驱动jar包
