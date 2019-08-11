@@ -8,8 +8,6 @@ Mysql/JDBC/TOMCAT/Servlet/Cookie/Session/Listener/Filter/Json/Redis
 2. 快速入门：
 	* 步骤：
 		1. 导入驱动jar包 mysql-connector-java-5.1.37-bin.jar
-			1.复制mysql-connector-java-5.1.37-bin.jar到项目的libs目录下
-			2.右键-->Add As Library
 		2. 注册驱动
 		3. 获取数据库连接对象 Connection
 		4. 定义sql
@@ -19,22 +17,26 @@ Mysql/JDBC/TOMCAT/Servlet/Cookie/Session/Listener/Filter/Json/Redis
 		8. 释放资源
 
 	* 代码实现：
-	  	//1. 导入驱动jar包
-        //2.注册驱动
-        Class.forName("com.mysql.jdbc.Driver");
-        //3.获取数据库连接对象
-        Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/db3", "root", "root");
-        //4.定义sql语句
-        String sql = "update account set balance = 500 where id = 1";
-        //5.获取执行sql的对象 Statement
-        Statement stmt = conn.createStatement();
-        //6.执行sql
-        int count = stmt.executeUpdate(sql);
-        //7.处理结果
-        System.out.println(count);
-        //8.释放资源
-        stmt.close();
-        conn.close();
+	```java
+  	//1.导入驱动jar包
+    //2.注册驱动
+    Class.forName("com.mysql.jdbc.Driver");
+    //3.获取数据库连接对象
+    Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/db1", "root", "root");
+    //Connection conn = DriverManager.getConnection("jdbc:mysql:///db1", "root", "root");
+    //4.定义sql语句
+    String sql = "update account set balance = 800 where id = 1";
+    //String sql = "update account set balance = 1000";
+    //5.获取执行sql的对象 Statement
+    Statement stmt = conn.createStatement();
+    //6.执行sql
+    int count = stmt.executeUpdate(sql);
+    //7.处理结果
+    System.out.println(count);
+    //8.释放资源
+    stmt.close();
+    conn.close();
+	```
 
 3. 详解各个对象：
 1. DriverManager：驱动管理对象
