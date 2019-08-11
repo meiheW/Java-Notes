@@ -67,6 +67,7 @@ Mysql/JDBC/TOMCAT/Servlet/Cookie/Session/Listener/Filter/Json/Redis
 				* password：密码 
 	
 **Connection：数据库连接对象** 
+
 	1. 功能：
 		1. 获取执行sql 的对象
 			* Statement createStatement()
@@ -77,6 +78,7 @@ Mysql/JDBC/TOMCAT/Servlet/Cookie/Session/Listener/Filter/Json/Redis
 			* 回滚事务：rollback() 
 	
 **Statement：执行sql的对象** 
+
 	1. 执行sql
 		1. boolean execute(String sql) ：可以执行任意的sql 了解 
 		2. int executeUpdate(String sql) ：执行DML（insert、update、delete）语句、DDL(create，alter、drop)语句
@@ -85,6 +87,7 @@ Mysql/JDBC/TOMCAT/Servlet/Cookie/Session/Listener/Filter/Json/Redis
 	
 		
 **ResultSet：结果集对象,封装查询结果** 
+
 	* boolean next(): 游标向下移动一行，判断当前行是否是最后一行末尾(是否有数据)，如果是，则返回false，如果不是则返回true
 	* getXxx(参数):获取数据
 		* Xxx：代表数据类型   如： int getInt() ,	String getString()
@@ -111,6 +114,7 @@ Mysql/JDBC/TOMCAT/Servlet/Cookie/Session/Listener/Filter/Json/Redis
 
 				
 **PreparedStatement：执行sql的对象** 
+
 	1. SQL注入问题：在拼接sql时，有一些sql的特殊关键字参与字符串的拼接。会造成安全性问题
 		1. 输入用户随便，输入密码：a' or 'a' = 'a
 		2. sql：select * from user where username = 'fhdsjkf' and password = 'a' or 'a' = 'a' 
