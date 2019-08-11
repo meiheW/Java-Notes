@@ -41,7 +41,7 @@ Mysql/JDBC/TOMCAT/Servlet/Cookie/Session/Listener/Filter/Json/Redis
 
 3. 详解各个对象： 
 
-	DriverManager：驱动管理对象
+**DriverManager：驱动管理对象**
 	* 功能：
 		1. 注册驱动：告诉程序该使用哪一个数据库驱动jar
 			static void registerDriver(Driver driver) :注册与给定的驱动程序 DriverManager 。 
@@ -65,8 +65,8 @@ Mysql/JDBC/TOMCAT/Servlet/Cookie/Session/Listener/Filter/Json/Redis
 					* 细节：如果连接的是本机mysql服务器，并且mysql服务默认端口是3306，则url可以简写为：jdbc:mysql:///数据库名称
 				* user：用户名
 				* password：密码 
-				* 
-	Connection：数据库连接对象
+	
+**Connection：数据库连接对象**
 	1. 功能：
 		1. 获取执行sql 的对象
 			* Statement createStatement()
@@ -76,65 +76,15 @@ Mysql/JDBC/TOMCAT/Servlet/Cookie/Session/Listener/Filter/Json/Redis
 			* 提交事务：commit() 
 			* 回滚事务：rollback() 
 	
-	Statement：执行sql的对象
+**Statement：执行sql的对象**
 	1. 执行sql
 		1. boolean execute(String sql) ：可以执行任意的sql 了解 
 		2. int executeUpdate(String sql) ：执行DML（insert、update、delete）语句、DDL(create，alter、drop)语句
 			* 返回值：影响的行数，可以通过这个影响的行数判断DML语句是否执行成功 返回值>0的则执行成功，反之，则失败。
 		3. ResultSet executeQuery(String sql)  ：执行DQL（select)语句
-	2. 练习：
-		1. account表 添加一条记录
-		2. account表 修改记录
-		3. account表 删除一条记录
-
-		代码：
-			Statement stmt = null;
-	        Connection conn = null;
-	        try {
-	            //1. 注册驱动
-	            Class.forName("com.mysql.jdbc.Driver");
-	            //2. 定义sql
-	            String sql = "insert into account values(null,'王五',3000)";
-	            //3.获取Connection对象
-	            conn = DriverManager.getConnection("jdbc:mysql:///db3", "root", "root");
-	            //4.获取执行sql的对象 Statement
-	            stmt = conn.createStatement();
-	            //5.执行sql
-	            int count = stmt.executeUpdate(sql);//影响的行数
-	            //6.处理结果
-	            System.out.println(count);
-	            if(count > 0){
-	                System.out.println("添加成功！");
-	            }else{
-	                System.out.println("添加失败！");
-	            }
 	
-	        } catch (ClassNotFoundException e) {
-	            e.printStackTrace();
-	        } catch (SQLException e) {
-	            e.printStackTrace();
-	        }finally {
-	            //stmt.close();
-	            //7. 释放资源
-	            //避免空指针异常
-	            if(stmt != null){
-	                try {
-	                    stmt.close();
-	                } catch (SQLException e) {
-	                    e.printStackTrace();
-	                }
-	            }
-	
-	            if(conn != null){
-	                try {
-	                    conn.close();
-	                } catch (SQLException e) {
-	                    e.printStackTrace();
-	                }
-	            }
-	        }
 		
-4. ResultSet：结果集对象,封装查询结果
+**ResultSet：结果集对象,封装查询结果**
 	* boolean next(): 游标向下移动一行，判断当前行是否是最后一行末尾(是否有数据)，如果是，则返回false，如果不是则返回true
 	* getXxx(参数):获取数据
 		* Xxx：代表数据类型   如： int getInt() ,	String getString()
@@ -160,7 +110,7 @@ Mysql/JDBC/TOMCAT/Servlet/Cookie/Session/Listener/Filter/Json/Redis
             }
 
 				
-5. PreparedStatement：执行sql的对象
+**PreparedStatement：执行sql的对象**
 	1. SQL注入问题：在拼接sql时，有一些sql的特殊关键字参与字符串的拼接。会造成安全性问题
 		1. 输入用户随便，输入密码：a' or 'a' = 'a
 		2. sql：select * from user where username = 'fhdsjkf' and password = 'a' or 'a' = 'a' 
