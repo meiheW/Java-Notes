@@ -8,15 +8,15 @@ Mysql/JDBC/TOMCAT/Servlet/Cookie/Session/Listener/Filter/Json/Redis
 
 2. 快速入门：
 ```text
-	步骤：
-		1. 导入驱动jar包 mysql-connector-java-5.1.37-bin.jar
-		2. 注册驱动
-		3. 获取数据库连接对象 Connection
-		4. 定义sql
-		5. 获取执行sql语句的对象 Statement
-		6. 执行sql，接受返回结果
-		7. 处理结果
-		8. 释放资源
+步骤：
+	1. 导入驱动jar包 mysql-connector-java-5.1.37-bin.jar
+	2. 注册驱动
+	3. 获取数据库连接对象 Connection
+	4. 定义sql
+	5. 获取执行sql语句的对象 Statement
+	6. 执行sql，接受返回结果
+	7. 处理结果
+	8. 释放资源
 ```
 	代码实现：
 	```java 
