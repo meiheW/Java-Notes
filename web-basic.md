@@ -41,7 +41,8 @@ Mysql/JDBC/TOMCAT/Servlet/Cookie/Session/Listener/Filter/Json/Redis
 
 3. 详解各个对象： 
 
-**DriverManager：驱动管理对象**
+**DriverManager：驱动管理对象**  
+
 	* 功能：
 		1. 注册驱动：告诉程序该使用哪一个数据库驱动jar
 			static void registerDriver(Driver driver) :注册与给定的驱动程序 DriverManager 。 
@@ -66,7 +67,7 @@ Mysql/JDBC/TOMCAT/Servlet/Cookie/Session/Listener/Filter/Json/Redis
 				* user：用户名
 				* password：密码 
 	
-**Connection：数据库连接对象** 
+**Connection：数据库连接对象**  
 
 	1. 功能：
 		1. 获取执行sql 的对象
@@ -77,7 +78,7 @@ Mysql/JDBC/TOMCAT/Servlet/Cookie/Session/Listener/Filter/Json/Redis
 			* 提交事务：commit() 
 			* 回滚事务：rollback() 
 	
-**Statement：执行sql的对象** 
+**Statement：执行sql的对象**  
 
 	1. 执行sql
 		1. boolean execute(String sql) ：可以执行任意的sql 了解 
@@ -86,7 +87,7 @@ Mysql/JDBC/TOMCAT/Servlet/Cookie/Session/Listener/Filter/Json/Redis
 		3. ResultSet executeQuery(String sql)  ：执行DQL（select)语句
 	
 		
-**ResultSet：结果集对象,封装查询结果** 
+**ResultSet：结果集对象,封装查询结果**  
 
 	* boolean next(): 游标向下移动一行，判断当前行是否是最后一行末尾(是否有数据)，如果是，则返回false，如果不是则返回true
 	* getXxx(参数):获取数据
@@ -113,7 +114,7 @@ Mysql/JDBC/TOMCAT/Servlet/Cookie/Session/Listener/Filter/Json/Redis
             }
 
 				
-**PreparedStatement：执行sql的对象** 
+**PreparedStatement：执行sql的对象**  
 
 	1. SQL注入问题：在拼接sql时，有一些sql的特殊关键字参与字符串的拼接。会造成安全性问题
 		1. 输入用户随便，输入密码：a' or 'a' = 'a
