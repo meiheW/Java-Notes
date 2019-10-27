@@ -40,9 +40,9 @@ JDBC/TOMCAT/Servlet/Cookie/Session/Listener/Filter
 	```
 
 
-4. **详解各个对象**： 
+4. **详解各个对象**：  
 
- 	DriverManager：驱动管理对象  
+ 	**DriverManager**：驱动管理对象  
 	功能：注册驱动，告诉程序该使用哪一个数据库驱动jar  
 	```java 
 	static void registerDriver(Driver driver) :注册与给定的驱动程序 DriverManager 。 
@@ -59,7 +59,7 @@ JDBC/TOMCAT/Servlet/Cookie/Session/Listener/Filter
 	注意：mysql5之后的驱动jar包可以省略注册驱动的步骤。
 	```
 	
-    Connection：数据库连接对象  
+    **Connection**：数据库连接对象  
 	获取执行sql 的对象  
 		Statement createStatement()  
 		PreparedStatement prepareStatement(String sql)  
@@ -68,13 +68,13 @@ JDBC/TOMCAT/Servlet/Cookie/Session/Listener/Filter
 		提交事务：commit()  
 		回滚事务：rollback()  
 	
-	Statement：执行sql的对象  
+	**Statement**：执行sql的对象  
 		boolean execute(String sql) ：可以执行任意的sql 了解  
 		int executeUpdate(String sql) ：执行DML（insert、update、delete）语句、DDL(create，alter、drop)语句  
 		* 返回值：影响的行数，可以通过这个影响的行数判断DML语句是否执行成功 返回值>0的则执行成功，反之，则失败。  
 		ResultSet executeQuery(String sql)  ：执行DQL（select)语句  
 	
-	ResultSet：结果集对象,封装查询结果   
+	**ResultSet**：结果集对象,封装查询结果   
 		boolean next(): 游标向下移动一行，判断当前行是否是最后一行末尾(是否有数据)，如果是，则返回false，如果不是则返回true  
 		getXxx(参数):获取数据  
 		* Xxx：代表数据类型   如： int getInt() ,	String getString()  
@@ -82,8 +82,7 @@ JDBC/TOMCAT/Servlet/Cookie/Session/Listener/Filter
 			1. int：代表列的编号,从1开始   如： getString(1)  
 			2. String：代表列名称。 如： getDouble("balance")  
 					
-PreparedStatement：执行sql的对象   
-
+    **PreparedStatement**：执行sql的对象   
 	解决sql注入问题：使用PreparedStatement对象来解决  
 	预编译的SQL：参数使用?作为占位符  
 	步骤：  
@@ -157,56 +156,3 @@ PreparedStatement：执行sql的对象
 	    }
 	}
 	```
-
-
-## 数据库连接池
-	1. 概念：当系统初始化好后，容器被创建，容器中会申请一些连接对象，当用户来访问数据库时，从容器中获取连接对象，用户访问完之后，会将连接对象归还给容器。
-
-	2. 好处：
-		1. 节约资源
-		2. 提升效率
-
-	3. C3P0：数据库连接池技术
-		* 步骤：
-			1. 导入jar包 (两个) c3p0-0.9.5.2.jar mchange-commons-java-0.2.12.jar ，
-				* 不要忘记导入数据库驱动jar包
-			2. 定义配置文件：
-				* 名称： c3p0.properties 或者 c3p0-config.xml
-				* 路径：直接将文件放在src目录下即可。
-
-			3. 创建核心对象 数据库连接池对象 ComboPooledDataSource
-			4. 获取连接： getConnection
-		* 代码：
-			 //1.创建数据库连接池对象
-	        DataSource ds  = new ComboPooledDataSource();
-	        //2. 获取连接对象
-	        Connection conn = ds.getConnection();
-	4. Druid：数据库连接池实现技术，由阿里巴巴提供的
-		1. 步骤：
-			1. 导入jar包 druid-1.0.9.jar
-			2. 定义配置文件：
-				* 是properties形式的
-				* 可以叫任意名称，可以放在任意目录下
-			3. 加载配置文件。Properties
-			4. 获取数据库连接池对象：通过工厂来来获取  DruidDataSourceFactory
-			5. 获取连接：getConnection
-		* 代码：
-		```java
-		 //3.加载配置文件
-        Properties pro = new Properties();
-        InputStream is = DruidDemo.class.getClassLoader().getResourceAsStream("druid.properties");
-        pro.load(is);
-        //4.获取连接池对象
-        DataSource ds = DruidDataSourceFactory.createDataSource(pro);
-        //5.获取连接
-        Connection conn = ds.getConnection();
-		```
-		2. 定义工具类
-			1. 定义一个类 JDBCUtils
-			2. 提供静态代码块加载配置文件，初始化连接池对象
-			3. 提供方法
-				1. 获取连接方法：通过数据库连接池获取连接
-				2. 释放资源
-				3. 获取连接池的方法
-
-
