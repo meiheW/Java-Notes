@@ -63,7 +63,7 @@ JDBC/TOMCAT/Servlet/Cookie/Session/Listener/Filter
 	获取执行sql 的对象  
 		Statement createStatement()  
 		PreparedStatement prepareStatement(String sql)  
-	管理事务：
+	管理事务：  
 		开启事务：setAutoCommit(boolean autoCommit) ：调用该方法设置参数为false，即开启事务  
 		提交事务：commit()  
 		回滚事务：rollback()  
@@ -84,22 +84,22 @@ JDBC/TOMCAT/Servlet/Cookie/Session/Listener/Filter
 					
 PreparedStatement：执行sql的对象   
 
-	1. 解决sql注入问题：使用PreparedStatement对象来解决
-	2. 预编译的SQL：参数使用?作为占位符
-	3. 步骤：
-		1. 导入驱动jar包 mysql-connector-java-5.1.37-bin.jar
-		2. 注册驱动
-		3. 获取数据库连接对象 Connection
-		4. 定义sql
-			* 注意：sql的参数使用？作为占位符。 如：select * from user where username = ? and password = ?;
-		5. 获取执行sql语句的对象 PreparedStatement  Connection.prepareStatement(String sql) 
-		6. 给？赋值：
-			* 方法： setXxx(参数1,参数2)
-				* 参数1：？的位置编号 从1 开始
-				* 参数2：？的值
-		7. 执行sql，接受返回结果，不需要传递sql语句
-		8. 处理结果
-		9. 释放资源
+	解决sql注入问题：使用PreparedStatement对象来解决  
+	预编译的SQL：参数使用?作为占位符  
+	步骤：  
+	1. 导入驱动jar包 mysql-connector-java-5.1.37-bin.jar  
+	2. 注册驱动  
+	3. 获取数据库连接对象 Connection  
+	4. 定义sql  
+		* 注意：sql的参数使用？作为占位符。 如：select * from user where username = ? and password = ?;  
+	5. 获取执行sql语句的对象 PreparedStatement  Connection.prepareStatement(String sql)  
+	6. 给？赋值：  
+		* 方法： setXxx(参数1,参数2)  
+			* 参数1：？的位置编号 从1 开始  
+			* 参数2：？的值  
+	7. 执行sql，接受返回结果，不需要传递sql语句  
+	8. 处理结果  
+	9. 释放资源  
 
 5.**JDBC控制事务**：
 	1. 事务：一个包含多个步骤的业务操作。如果这个业务操作被事务管理，则这多个步骤要么同时成功，要么同时失败。
