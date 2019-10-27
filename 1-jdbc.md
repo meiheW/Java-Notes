@@ -61,18 +61,18 @@ JDBC/TOMCAT/Servlet/Cookie/Session/Listener/Filter
 	
     **Connection**：数据库连接对象  
 	获取执行sql 的对象  
-		Statement createStatement()  
-		PreparedStatement prepareStatement(String sql)  
+		&emsp;Statement createStatement()  
+		&emsp;PreparedStatement prepareStatement(String sql)  
 	管理事务：  
-		开启事务：setAutoCommit(boolean autoCommit) ：调用该方法设置参数为false，即开启事务  
-		提交事务：commit()  
-		回滚事务：rollback()  
+		&emsp;开启事务：setAutoCommit(boolean autoCommit) ：调用该方法设置参数为false，即开启事务  
+		&emsp;提交事务：commit()  
+		&emsp;回滚事务：rollback()  
 	
 	**Statement**：执行sql的对象  
-		boolean execute(String sql) ：可以执行任意的sql 了解  
-		int executeUpdate(String sql) ：执行DML（insert、update、delete）语句、DDL(create，alter、drop)语句  
-		* 返回值：影响的行数，可以通过这个影响的行数判断DML语句是否执行成功 返回值>0的则执行成功，反之，则失败。  
-		ResultSet executeQuery(String sql)  ：执行DQL（select)语句  
+		&emsp;boolean execute(String sql) ：可以执行任意的sql 了解  
+		&emsp;int executeUpdate(String sql) ：执行DML（insert、update、delete）语句、DDL(create，alter、drop)语句  
+		&emsp;返回值：影响的行数，可以通过这个影响的行数判断DML语句是否执行成功 返回值>0的则执行成功，反之，则失败。  
+		&emsp;ResultSet executeQuery(String sql)  ：执行DQL（select)语句  
 	
 	**ResultSet**：结果集对象,封装查询结果   
 		boolean next(): 游标向下移动一行，判断当前行是否是最后一行末尾(是否有数据)，如果是，则返回false，如果不是则返回true  
@@ -103,9 +103,9 @@ JDBC/TOMCAT/Servlet/Cookie/Session/Listener/Filter
 5.**JDBC控制事务**：
 	1. 事务：一个包含多个步骤的业务操作。如果这个业务操作被事务管理，则这多个步骤要么同时成功，要么同时失败。
 	2. 操作：
-		1. 开启事务
-		2. 提交事务
-		3. 回滚事务
+		&emsp;1. 开启事务
+		&emsp;2. 提交事务
+		&emsp;3. 回滚事务
 	3. 使用Connection对象来管理事务
 		* 开启事务：setAutoCommit(boolean autoCommit) ：调用该方法设置参数为false，即开启事务
 			* 在执行sql之前开启事务
