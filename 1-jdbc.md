@@ -60,13 +60,13 @@ JDBC/TOMCAT/Servlet/Cookie/Session/Listener/Filter
 	```
 	
     Connection：数据库连接对象  
-	获取执行sql 的对象
-		Statement createStatement()
+	获取执行sql 的对象  
+		Statement createStatement()  
 		PreparedStatement prepareStatement(String sql)  
 	管理事务：
-		开启事务：setAutoCommit(boolean autoCommit) ：调用该方法设置参数为false，即开启事务
-		提交事务：commit() 
-		回滚事务：rollback() 
+		开启事务：setAutoCommit(boolean autoCommit) ：调用该方法设置参数为false，即开启事务  
+		提交事务：commit()  
+		回滚事务：rollback()  
 	
 	Statement：执行sql的对象  
 		boolean execute(String sql) ：可以执行任意的sql 了解  
