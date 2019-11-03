@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--suppress ALL -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--
+        SpEL:spring表达式
+        <property name="" value="#{表达式}">
+        #{123}、#{'jack'} ： 数字、字符串
+        #{T(类).字段|方法}	：静态方法或字段
+        #{beanId}	：另一个bean引用
+        #{beanId.propName}	：操作数据
+        #{beanId.toString()}	：执行方法
+    -->
+    <bean id="address" class="com.tomster.di.model.Address">
+        <property name="name" value="shanghai"></property>
+    </bean>
+
+    <bean id="customer" class="com.tomster.di.model.Customer">
+        <property name="name" value="#{'wmh'}"></property>
+        <property name="pi" value="#{T(java.lang.Math).PI}"></property>
+        <!-- 一个对象注入另一个的方式 -->
+        <!--<property name="address" value="#{address}"></property>-->
+        <property name="address" ref="address"></property>
+    </bean>
+</beans>

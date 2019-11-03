@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--suppress ALL -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+
+    <bean id="programmer" class="com.tomster.di.model.Programmer">
+        <property name="books">
+            <list>
+                <value>jvm</value>
+                <value>java</value>
+                <value>spring</value>
+            </list>
+        </property>
+
+        <property name="infos">
+            <map>
+                <entry key="name" value="wmh"></entry>
+                <entry key="age" value="26"></entry>
+                <entry key="position" value="t11"></entry>
+            </map>
+        </property>
+
+        <property name="schools">
+            <array>
+                <value>JIT</value>
+                <value>SHU</value>
+            </array>
+        </property>
+
+    </bean>
+</beans>
