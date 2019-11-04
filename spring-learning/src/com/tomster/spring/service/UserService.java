@@ -6,7 +6,6 @@ import org.springframework.stereotype.Service;
  * @author meihewang
  * @date 2019/10/31  0:17
  */
-@Service
 public class UserService {
 
     private String name;
