@@ -7,6 +7,8 @@ import com.tomster.aop.service.StudentService;
 import com.tomster.aop.service.UserServiceImpl;
 import com.tomster.aop.service.UserServiceProxy;
 import org.junit.Test;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
@@ -37,6 +39,22 @@ public class MyTest {
     public void test3(){
         StudentService cglibService = MyBeanFactory.createCglibService();
         cglibService.addStudent();
+    }
+
+    @Test
+    public void test4(){
+        ApplicationContext applicationContext = new ClassPathXmlApplicationContext("beans-aop.xml");
+        IUserService userService = (IUserService)applicationContext.getBean("userService");
+        userService.addUser();
+        StudentService studentService = (StudentService)applicationContext.getBean("studentService");
+        studentService.addStudent();
+    }
+
+    @Test
+    public void test5(){
+        ApplicationContext applicationContext = new ClassPathXmlApplicationContext("beans-aspectj.xml");
+        IUserService userService = (IUserService)applicationContext.getBean("userService");
+        userService.addUser();
     }
 
 
