@@ -20,6 +20,6 @@ public class UserService {
     }
 
     public void addUser() {
-        System.out.println("创建用户: " + name);
+        System.out.println("add user: " + name);
     }
 }

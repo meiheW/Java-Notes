@@ -16,10 +16,80 @@ d. 方便集成各种优秀框架：其内部提供了对各种优秀框架，�
 
 e. 降低JavaEE API的使用难度：对JavaEE开发中一些难用的API都提供了封装，如JDBC、JavaMail、远程调用webservice等。
 
-### 3.架构  
+### 3.体系结构  
 <div align="center">
-	<img src="img/spring-structure.jpg" width="150px">
+	<img src="img/spring-structure.jpg" width="66%">
 </div>
+
+### 4.核心jar包  
+a. spring-core-xxx.jar：包含Spring框架基本的核心工具类； 
+
+b. spring-beans-xxx.jar：访问配置文件、创建和管理bean，IoC、DI相关操作； 
+
+c. spring-context-xxx.jar：在基础IoC功能上的扩展服务，此外还提供许多企业级服务的支持,如邮件服务、任务调度、JNDI定位、EJB集成、远程访问、缓存以及各种视图层框架的封装等； 
+
+d. spring-expression-xxx.jar：spring表达式语言；  
+
+
+## IoC  
+
+
+### 1.xml配置方式  
+
+类文件  
+```
+package com.tomster.spring.service;
+
+import org.springframework.stereotype.Service;
+
+/**
+ * @author meihewang
+ * @date 2019/10/31  0:17
+ */
+public class UserService {
+
+    private String name;
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        System.out.println("set: " + name);
+        this.name = name;
+    }
+
+    public void addUser() {
+        System.out.println("add user: " + name);
+    }
+}
+```
+
+XML配置文件  
+```
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+    <!-- 配置一个bean对象-->
+    <bean id="userService" class="com.tomster.spring.service.UserService">
+        <property name="name" value="tomster"></property>
+    </bean>
+
+</beans>
+```
+
+调用方式
+```
+ApplicationContext applicationContext = new ClassPathXmlApplicationContext("beans.xml");
+UserService userService = (UserService)applicationContext.getBean("userService");
+userService.addUser();
+```
+
+
 
 
 
