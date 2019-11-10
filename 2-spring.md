@@ -12,9 +12,15 @@ b. AOP编程的支持：Spring提供面向切面编程，声明式事务的支�
 
 c. 方便程序的测试：对Junit4支持，可以通过注解方便的测试Spring程序；
 
-d. 方便集成各种优秀框架：其内部提供了对各种优秀框架，如：Struts、Hibernate、MyBatis等
+d. 方便集成各种优秀框架：其内部提供了对各种优秀框架，如：Struts、Hibernate、MyBatis等； 
 
 e. 降低JavaEE API的使用难度：对JavaEE开发中一些难用的API都提供了封装，如JDBC、JavaMail、远程调用webservice等。
+
+### 3.架构  
+<div align="center">
+	<img src="img/spring-structure.jpg" width="150px">
+</div>
+
 
 
 
