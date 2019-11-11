@@ -333,13 +333,13 @@ xml开启注解，指定包扫描位置
 
 ### 2. 术语  
 
-* 1.Target：目标类，需要被代理的类  
-* 2.Proxy：代理类  
-* 3.Joinpoint：可能被拦截到的方法
-* 4.PointCut：已经被增强的连接点
-* 5.Advice：通知/增强，增强代码。例如：after、before  
-* 6.Weaving：织入，把增强应用到目标对象来创建新的代理对象的过程  
-* 7.Aspect: 切面类。切入点和通知的结合  
+* Target：目标类，需要被代理的类  
+* Proxy：代理类  
+* Joinpoint：可能被拦截到的方法
+* PointCut：已经被增强的连接点
+* Advice：通知/增强，增强代码。例如：after、before  
+* Weaving：织入，把增强应用到目标对象来创建新的代理对象的过程  
+* Aspect: 切面类。切入点和通知的结合  
 
 ### 3. 手动实现AOP  
 Target类
