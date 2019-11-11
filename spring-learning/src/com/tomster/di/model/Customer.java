@@ -7,7 +7,7 @@ package com.tomster.di.model;
 public class Customer {
 
     private String name;
-    private String sex = "male";
+    private String sex;
     private double pi;
 
     private Address address;

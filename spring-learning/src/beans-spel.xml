@@ -19,7 +19,8 @@ http://www.springframework.org/schema/beans http://www.springframework.org/schem
     </bean>
 
     <bean id="customer" class="com.tomster.di.model.Customer">
-        <property name="name" value="#{'wmh'}"></property>
+        <property name="name" value="wmh"></property>
+        <property name="sex" value="#{'male'}"></property>
         <property name="pi" value="#{T(java.lang.Math).PI}"></property>
         <!-- 一个对象注入另一个的方式 -->
         <!--<property name="address" value="#{address}"></property>-->

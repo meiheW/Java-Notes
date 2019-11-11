@@ -18,7 +18,7 @@ public class Test {
     public void test(){
         //DI
         ApplicationContext applicationContext = new ClassPathXmlApplicationContext("beans-di.xml");
-        Student student = (Student)applicationContext.getBean("student3");
+        Student student = (Student)applicationContext.getBean("student2");
         System.out.println(student);
     }
 

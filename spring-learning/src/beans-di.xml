@@ -7,19 +7,19 @@ http://www.springframework.org/schema/beans http://www.springframework.org/schem
 
     <!-- 1.构造方法 -->
 
-    <!--&lt;!&ndash; 通过属性名称 &ndash;&gt;
+    <!-- 通过属性名称 -->
     <bean id="student1" class="com.tomster.di.model.Student">
         <constructor-arg name="username" value="wmh"></constructor-arg>
         <constructor-arg name="password" value="123456"></constructor-arg>
     </bean>
-    &lt;!&ndash; 通过索引和类型 &ndash;&gt;
+    <!-- 通过索引和类型 -->
     <bean id="student2" class="com.tomster.di.model.Student">
         <constructor-arg index="0" value="wmh" type="java.lang.String"></constructor-arg>
-        <constructor-arg index="1" value="26" type="int"></constructor-arg>
-    </bean>-->
+        <constructor-arg index="1" value="26" type="java.lang.Integer"></constructor-arg>
+    </bean>
 
 
-    <!-- 1.property -->
+    <!-- 2. setter方法 -->
     <bean id="student3" class="com.tomster.di.model.Student">
         <property name="username" value="wmh"></property>
         <property name="password" value="123456"></property>

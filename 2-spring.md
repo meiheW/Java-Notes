@@ -1,6 +1,6 @@
 # Spring基础  
 
-## 基本概念  
+## <B>基本概念</B>  
 
 ### 1.概念  
 
@@ -58,7 +58,6 @@ public class UserService {
     }
 
     public void setName(String name) {
-        System.out.println("set: " + name);
         this.name = name;
     }
 
@@ -85,12 +84,246 @@ http://www.springframework.org/schema/beans http://www.springframework.org/schem
 </beans>
 ```
 
-调用方式
+调用方式  
 ```java
 ApplicationContext applicationContext = new ClassPathXmlApplicationContext("beans.xml");
 UserService userService = (UserService)applicationContext.getBean("userService");
 userService.addUser();
 ```    
+
+加载spring容器的三种方法：  
+```java
+//1.通过ClassPathXmlApplicationContext类路径加载[最常用]
+ApplicationContext applicationContext = new ClassPathXmlApplicationContext("beans.xml");
+
+//2.通过文件系统路径获得配置文件[绝对路径]
+ApplicationContext applicationContext = new FileSystemXmlApplicationContext("E:\\projects\\Java-Notes\\spring-learning\\src\\beans.xml");
+
+//3.BeanFactory[了解]
+String path = "E:\\projects\\Java-Notes\\spring-learning\\src\\beans.xml";
+BeanFactory beanFactory = new XmlBeanFactory(new FileSystemResource(path));
+UserService userService = (UserService)beanFactory.getBean("userService");
+userService.addUser();
+```   
+BeanFactory和ApplicationContext区别：
+
+* BeanFactory：BeanFacotry是spring中比较原始的Factory。如XMLBeanFactory就是一种典型的BeanFactory，目前已经弃用了。采用延迟加载，第一次调用getBean时才会加载Bean。
+
+* ApplicationContext：继承自BeanFactory，对其进行功能拓展，支持国际化，事件机制，载入多个context，事务和aop等等。获取实现该接口容器的实例时，就将容器内所有的Bean全部实例化。
+
+
+## DI  
+
+依赖注入可以通过XML配置方式和注解方式完成
+
+### 1.xml配置方式  
+
+#### 1.1 一般形式  
+
+类文件
+```java
+package com.tomster.di.model;
+
+/**
+ * @author meihewang
+ * @date 2019/11/03  21:55
+ */
+public class Student{
+
+    private String username;
+    private String password;
+    private Integer age;
+
+    //setter and getter Omitted...
+
+    public Student() {
+    }
+
+    public Student(String username, String password) {
+        this.username = username;
+        this.password = password;
+    }
+
+    public Student(String username, Integer age) {
+        this.username = username;
+        this.age = age;
+    }
+}
+```
+
+XML配置文件  
+```xml
+<!-- 1.构造方法 -->
+<!-- 通过属性名称 -->
+<bean id="student1" class="com.tomster.di.model.Student">
+    <constructor-arg name="username" value="wmh"></constructor-arg>
+    <constructor-arg name="password" value="123456"></constructor-arg>
+</bean>
+<!-- 通过索引和类型 -->
+<bean id="student2" class="com.tomster.di.model.Student">
+    <constructor-arg index="0" value="wmh" type="java.lang.String"></constructor-arg>
+    <constructor-arg index="1" value="26" type="java.lang.Integer"></constructor-arg>
+</bean>
+
+
+<!-- 2. setter方法 -->
+<bean id="student3" class="com.tomster.di.model.Student">
+    <property name="username" value="wmh"></property>
+    <property name="password" value="123456"></property>
+</bean>
+```
+
+构造方法可以用指定属性名称， 或者索引和类型来确定调用哪个构造函数创建Bean；  
+property标签方式是直接给属性赋值，调用属性的setter方法，setter方法去掉会异常。  
+
+
+#### 1.2 对象注入  
+
+类文件  
+
+Address.java  
+
+```java
+package com.tomster.di.model;
+
+/**
+ * @author meihewang
+ * @date 2019/11/03  22:48
+ */
+public class Address {
+
+    private String name;
+
+    //setter and getter Omitted...
+}
+```
+
+
+Customer.java  
+```java
+package com.tomster.di.model;
+
+/**
+ * @author meihewang
+ * @date 2019/11/03  22:44
+ */
+public class Customer {
+
+    private String name;
+    private String sex;
+    private double pi;
+    private Address address;
+
+    //setter and getter Omitted...
+}
+```
+
+xml配置文件
+
+```xml
+<!--
+    SpEL:spring表达式
+    <property name="" value="#{表达式}">
+    #{123}、#{'jack'} ： 数字、字符串
+    #{T(类).字段|方法}	：静态方法或字段
+    #{beanId}	：另一个bean引用
+    #{beanId.propName}	：操作数据
+    #{beanId.toString()}	：执行方法
+-->
+<bean id="address" class="com.tomster.di.model.Address">
+    <property name="name" value="shanghai"></property>
+</bean>
+
+<bean id="customer" class="com.tomster.di.model.Customer">
+    <property name="name" value="wmh"></property>
+    <property name="sex" value="#{'male'}"></property>
+    <property name="pi" value="#{T(java.lang.Math).PI}"></property>
+    <!-- 一个对象注入另一个的方式 -->
+    <!--<property name="address" value="#{address}"></property>-->
+    <property name="address" ref="address"></property>
+</bean>
+
+```  
+
+xml配置方式将一个对象注入另一个对象，使用ref指定注入对象的id
+
+#### 1.3 集合注入  
+
+
+```java
+package com.tomster.di.model;
+
+import java.util.Arrays;
+import java.util.List;
+import java.util.Map;
+
+/**
+ * @author meihewang
+ * @date 2019/11/03  23:19
+ */
+public class Programmer {
+
+    List<String> books;
+    Map<String, String> infos;
+    String[] schools;
+
+    //setter and getter Omitted...
+
+}
+
+```  
+
+xml配置文件  
+
+```xml
+<bean id="programmer" class="com.tomster.di.model.Programmer">
+    <!--列表-->
+    <property name="books">
+        <list>
+            <value>jvm</value>
+            <value>java</value>
+            <value>spring</value>
+        </list>
+    </property>
+    <!--map-->
+    <property name="infos">
+        <map>
+            <entry key="name" value="wmh"></entry>
+            <entry key="age" value="26"></entry>
+            <entry key="position" value="t11"></entry>
+        </map>
+    </property>
+    <!--数组-->
+    <property name="schools">
+        <array>
+            <value>JIT</value>
+            <value>SHU</value>
+        </array>
+    </property>
+
+</bean>
+
+```
+列表，map和数组注入元素分别用list,map和array，另还有set和value标签。  
+
+
+
+### 2.注解方式  
+
+常用注解  
+* @component：取代了xml配置文件中的bean标签，默认参数表示id
+* @Controller-Service-Repository：mvc三层
+* @Autowired：自动根据类型注入
+* @Qualifier(“名称”)：指定自动注入的id名称
+
+xml开启注解，指定包扫描位置
+```xml
+    <!-- 开启注解-->
+    <context:annotation-config/>
+    <!-- 注解的位置-->
+    <context:component-scan base-package="com.tomster"/>
+```
+
 
 
 
