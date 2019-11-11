@@ -1,6 +1,6 @@
 # Spring基础  
 
-## <B>基本概念</B>  
+## 基本概念  
 
 ### 1.概念  
 
@@ -249,6 +249,7 @@ xml配置方式将一个对象注入另一个对象，使用ref指定注入对�
 
 #### 1.3 集合注入  
 
+类文件  
 
 ```java
 package com.tomster.di.model;
@@ -324,8 +325,154 @@ xml开启注解，指定包扫描位置
     <context:component-scan base-package="com.tomster"/>
 ```
 
+## AOP  
+
+### 1. 概念  
+
+&emsp;&emsp;Aspect Oriented Programming的缩写，意为：面向切面编程，通过预编译方式和运行期动态代理实现程序功能的统一维护的一种技术。AOP采取横向抽取机制，取代了传统纵向继承体系重复性代码。利用AOP可以对业务逻辑的各个部分进行隔离，从而使得业务逻辑各部分之间的耦合度降低，提高程序的可重用性，同时提高了开发的效率。经常应用于事务管理、性能监视、安全检查、缓存 、日志等需求。
+
+### 2. 术语  
+
+* 1.Target：目标类，需要被代理的类  
+* 2.Proxy：代理类  
+* 3.Joinpoint：可能被拦截到的方法
+* 4.PointCut：已经被增强的连接点
+* 5.Advice：通知/增强，增强代码。例如：after、before  
+* 6.Weaving：织入，把增强应用到目标对象来创建新的代理对象的过程  
+* 7.Aspect: 切面类。切入点和通知的结合  
+
+### 3. 手动实现AOP  
+Target类
+```java
+package com.tomster.aop.service;
+
+/**
+ * @author meihewang
+ * @date 2019/11/05  23:50
+ */
+public class UserServiceImpl implements IUserService {
+    @Override
+    public void addUser() {
+        System.out.println("add user");
+    }
+
+    @Override
+    public void updateUser() {
+        System.out.println("update user");
+    }
+
+    @Override
+    public void deleteUser() {
+        System.out.println("delete user");
+    }
+}
+```  
+
+切面类
+```java
+package com.tomster.aop.aspect;
+
+/**
+ * @author meihewang
+ * @date 2019/11/05  23:52
+ */
+public class MyAspect {
+
+    public void before(){
+        System.out.println("begin...");
+    }
+
+    public void after(){
+        System.out.println("end...");
+    }
+
+}
+```  
+
+工厂类  
+```java
+package com.tomster.aop.factory;
+
+import com.tomster.aop.aspect.MyAspect;
+import com.tomster.aop.service.IUserService;
+import com.tomster.aop.service.StudentService;
+import com.tomster.aop.service.UserServiceImpl;
+import com.tomster.spring.service.UserService;
+import org.springframework.cglib.proxy.Enhancer;
+import org.springframework.cglib.proxy.MethodInterceptor;
+import org.springframework.cglib.proxy.MethodProxy;
+
+import java.lang.reflect.InvocationHandler;
+import java.lang.reflect.Method;
+import java.lang.reflect.Proxy;
+
+/**
+ * @author meihewang
+ * @date 2019/11/06  0:11
+ */
+public class MyBeanFactory {
+
+    public static IUserService createUserService() {
+        final IUserService userService = new UserServiceImpl();
+        final MyAspect aspect = new MyAspect();
+
+        IUserService userServiceP = (IUserService) Proxy.newProxyInstance(MyBeanFactory.class.getClassLoader(),
+                UserServiceImpl.class.getInterfaces(), new InvocationHandler() {
+                    @Override
+                    public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
+
+                        aspect.before();
+                        Object invoke = method.invoke(userService, args);
+                        aspect.before();
+                        return invoke;
+                    }
+                });
+
+        return userServiceP;
+    }
 
 
+    public static StudentService createCglibService() {
+        final StudentService studentService = new StudentService();
+        final MyAspect aspect = new MyAspect();
+        Enhancer enhancer = new Enhancer();
+        enhancer.setSuperclass(studentService.getClass());
+        enhancer.setCallback(new MethodInterceptor() {
+            @Override
+            public Object intercept(Object proxy, Method method, Object[] args, MethodProxy methodProxy) throws Throwable {
+                aspect.before();
+                Object retObj = methodProxy.invokeSuper(proxy,args);
+                aspect.after();
+                return retObj;
+            }
+        });
+
+        return  (StudentService)enhancer.create();
+    }
+}
+
+```  
+
+测试方式以及输出结果  
+```java
+//jdk dynamic proxy
+@Test
+public void test1(){
+    IUserService userService = MyBeanFactory.createUserService();
+    userService.addUser();
+}
+//cglib dynamic proxy
+@Test
+public void test3(){
+    StudentService cglibService = MyBeanFactory.createCglibService();
+    cglibService.addStudent();
+}
+
+//output
+begin...
+add Student
+end...
+```
 
 
 
