@@ -1,6 +1,5 @@
 package com.tomster.aspectj.service;
 
-
 import org.springframework.stereotype.Service;
 
 /**

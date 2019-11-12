@@ -28,10 +28,9 @@
             <aop:pointcut id="myPointcut" expression="execution(* com.tomster.aop.service.UserServiceImpl.*(..))"/>
 
             <!-- 配置前置通知...-->
-            <!--<aop:before method="myBefore" pointcut-ref="myPointcut" />-->
-
-            <!--<aop:after-returning method="myAfterReturning" pointcut-ref="myPointcut"/>-->
-
+            <aop:before method="myBefore" pointcut-ref="myPointcut" />
+            <!-- 配置后置通知...-->
+            <aop:after-returning method="myAfterReturning" pointcut-ref="myPointcut"/>
             <!--配置环绕通知-->
             <aop:around method="myAround" pointcut-ref="myPointcut"></aop:around>
         </aop:aspect>

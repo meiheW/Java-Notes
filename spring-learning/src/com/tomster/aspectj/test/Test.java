@@ -1,6 +1,7 @@
 package com.tomster.aspectj.test;
 
 
+import com.tomster.aspectj.service.IUserService;
 import com.tomster.aspectj.service.UserServiceImpl;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -14,7 +15,7 @@ public class Test {
     @org.junit.Test
     public void test(){
         ApplicationContext applicationContext = new ClassPathXmlApplicationContext("beans-aspectj-anno.xml");
-        UserServiceImpl userService = (UserServiceImpl)applicationContext.getBean("userService");
+        IUserService userService = (IUserService)applicationContext.getBean("userService");
         userService.addUser();
     }
 }

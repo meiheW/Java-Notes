@@ -319,10 +319,10 @@ xml配置文件
 
 xml开启注解，指定包扫描位置
 ```xml
-    <!-- 开启注解-->
-    <context:annotation-config/>
-    <!-- 注解的位置-->
-    <context:component-scan base-package="com.tomster"/>
+<!-- 开启注解-->
+<context:annotation-config/>
+<!-- 注解的位置-->
+<context:component-scan base-package="com.tomster"/>
 ```
 
 ## AOP  
@@ -484,8 +484,182 @@ jdk动态代理和cglib动态代理的区别：
 
 #### 4.1 xml配置方式
 
+目标对象
+```java
+package com.tomster.aop.service;
 
-#### 4.2 注解配置方式
+/**
+ * @author meihewang
+ * @date 2019/11/05  23:50
+ */
+public class UserServiceImpl implements IUserService {
+    @Override
+    public void addUser() {
+        System.out.println("add user");
+    }
+
+    @Override
+    public void updateUser() {
+        System.out.println("update user");
+    }
+
+    @Override
+    public void deleteUser() {
+        System.out.println("delete user");
+    }
+}
+
+```
+切面类
+```java
+package com.tomster.aop.aspect;
+
+import org.aspectj.lang.ProceedingJoinPoint;
+
+/**
+ * @author meihewang
+ * @date 2019/11/06  23:15
+ */
+public class MyAspect3 {
+    public void myBefore(){
+        System.out.println("前置通知...");
+    }
+
+    public void myAfterReturning(){
+        System.out.println("后置通知...");
+    }
+
+    public Object myAround(ProceedingJoinPoint pjp) throws Throwable {
+        System.out.println("环绕通知...");
+        System.out.println("开启事务...");
+        //放行
+        Object retObj = pjp.proceed();
+        System.out.println("提交事务...");
+        return retObj;
+    }
+}
+
+
+
+```
+xml配置文件
+
+```xml
+<!-- 配置切面对象-->
+<bean id="myAspect3" class="com.tomster.aop.aspect.MyAspect3"></bean>
+
+<!-- 配置 aop -->
+<aop:config>
+    <!-- aop:指定切面-->
+    <aop:aspect ref="myAspect3">
+        <!--定义一个切入点-->
+        <aop:pointcut id="myPointcut" expression="execution(* com.tomster.aop.service.UserServiceImpl.*(..))"/>
+
+        <!-- 配置前置通知...-->
+        <aop:before method="myBefore" pointcut-ref="myPointcut" />
+        <!-- 配置后置通知...-->
+        <aop:after-returning method="myAfterReturning" pointcut-ref="myPointcut"/>
+        <!--配置环绕通知-->
+        <aop:around method="myAround" pointcut-ref="myPointcut"></aop:around>
+    </aop:aspect>
+</aop:config>
+```
+
+测试类及结果
+```java
+ApplicationContext applicationContext = new ClassPathXmlApplicationContext("beans-aspectj.xml");
+IUserService userService = (IUserService)applicationContext.getBean("userService");
+userService.addUser();
+
+前置通知...
+环绕通知...
+开启事务...
+add user
+提交事务...
+后置通知...
+```
+
+#### 4.2 注解配置方式  
+目标类
+```java
+package com.tomster.aspectj.service;
+
+import org.springframework.stereotype.Service;
+
+/**
+ * @author meihewang
+ * @date 2019/11/05  23:50
+ */
+@Service("userService")
+public class UserServiceImpl implements IUserService {
+    @Override
+    public void addUser() {
+        System.out.println("add user");
+    }
+
+    @Override
+    public void updateUser() {
+        System.out.println("update user");
+    }
+
+    @Override
+    public void deleteUser() {
+        System.out.println("delete user");
+    }
+}
+```
+
+切面类
+```java
+package com.tomster.aspectj.aspect;
+
+import org.aspectj.lang.ProceedingJoinPoint;
+import org.aspectj.lang.annotation.Around;
+import org.aspectj.lang.annotation.Aspect;
+import org.springframework.stereotype.Component;
+
+/**
+ * @author meihewang
+ * @date 2019/11/05  23:52
+ */
+@Component
+@Aspect
+public class MyAspect {
+
+    @Around("execution(* com.tomster.aspectj.service.*.*(..))")
+    public Object around(ProceedingJoinPoint processJoinPoint){
+        System.out.println("begin...");
+        Object response = null;
+        try {
+            response = processJoinPoint.proceed(processJoinPoint.getArgs());
+            System.out.println("finish...");
+
+        } catch (Throwable throwable) {
+            throwable.printStackTrace();
+        }
+        return response;
+    }
+}
+```
+
+xml配置文件
+```xml
+<!-- 配置扫描注解的位置 -->
+<context:component-scan base-package="com.tomster.aspectj"/>
+
+<!-- 配置aop注解生效-->
+<aop:aspectj-autoproxy></aop:aspectj-autoproxy>
+```
+测试代码及输出
+```java
+ApplicationContext applicationContext = new ClassPathXmlApplicationContext("beans-aspectj-anno.xml");
+IUserService userService = (IUserService)applicationContext.getBean("userService");
+userService.addUser();
+
+begin...
+add user
+finish...
+```
 
 
 

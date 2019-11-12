@@ -15,7 +15,7 @@
 
 
     <!-- 配置扫描注解的位置 -->
-    <context:component-scan base-package="com.tomster"/>
+    <context:component-scan base-package="com.tomster.aspectj"/>
 
     <!-- 配置aop注解生效-->
     <aop:aspectj-autoproxy></aop:aspectj-autoproxy>
