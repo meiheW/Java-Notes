@@ -1,8 +1,6 @@
 package com.tomster.aspectj.test;
 
-
 import com.tomster.aspectj.service.IUserService;
-import com.tomster.aspectj.service.UserServiceImpl;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 

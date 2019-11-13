@@ -10,6 +10,12 @@
       <root url="jar://F:/学习资料/2018IDEA基础+就业/4.框架/03.Spring/gyf-day01-20180424/day01-20140424/spring-jar/spring-aspects-4.2.0.RELEASE.jar!/" />
       <root url="jar://F:/学习资料/2018IDEA基础+就业/4.框架/03.Spring/gyf-day01-20180424/day01-20140424/spring-jar/com.springsource.org.aopalliance-1.0.0.jar!/" />
       <root url="jar://F:/学习资料/2018IDEA基础+就业/4.框架/03.Spring/gyf-day01-20180424/day01-20140424/spring-jar/com.springsource.org.aspectj.weaver-1.6.8.RELEASE.jar!/" />
+      <root url="jar://F:/学习资料/2018IDEA基础+就业/4.框架/03.Spring/gyf-day01-20180424/day01-20140424/spring-jar/com.springsource.com.mchange.v2.c3p0-0.9.1.2.jar!/" />
+      <root url="jar://F:/学习资料/2018IDEA基础+就业/4.框架/03.Spring/gyf-day01-20180424/day01-20140424/spring-jar/spring-jdbc-4.2.0.RELEASE.jar!/" />
+      <root url="jar://F:/学习资料/2018IDEA基础+就业/4.框架/03.Spring/gyf-day01-20180424/day01-20140424/spring-jar/spring-tx-4.2.0.RELEASE.jar!/" />
+      <root url="jar://F:/学习资料/2018IDEA基础+就业/4.框架/03.Spring/gyf-day01-20180424/day01-20140424/spring-jar/mysql-connector-java-5.1.46.jar!/" />
+      <root url="jar://F:/学习资料/2018IDEA基础+就业/4.框架/03.Spring/gyf-day01-20180424/day01-20140424/spring-jar/com.springsource.org.apache.commons.dbcp-1.2.2.osgi.jar!/" />
+      <root url="jar://F:/学习资料/2018IDEA基础+就业/4.框架/03.Spring/gyf-day01-20180424/day01-20140424/spring-jar/com.springsource.org.apache.commons.pool-1.5.3.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

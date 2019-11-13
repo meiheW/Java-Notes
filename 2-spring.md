@@ -661,11 +661,140 @@ add user
 finish...
 ```
 
+### 5. JdbcTemplate  
+
+#### 5.1 JdbcTemplate简单使用
+
+```java
+package com.tomster.jdbctemp.test;
+
+import org.apache.commons.dbcp.BasicDataSource;
+import org.junit.Test;
+import org.springframework.jdbc.core.JdbcTemplate;
+
+/**
+ * @author meihewang
+ * @date 2019/11/13  0:04
+ */
+public class JdbcTest {
+
+    @Test
+    public void test(){
+        //数据源
+        BasicDataSource bds = new BasicDataSource();
+        bds.setDriverClassName("com.mysql.jdbc.Driver");
+        bds.setUrl("jdbc:mysql://localhost:3306/spring");
+        bds.setUsername("root");
+        bds.setPassword("123456");
+
+        JdbcTemplate jt = new JdbcTemplate(bds);
+        String sql = "insert into t_user(username,password) values('tom','123');";
+        jt.update(sql);
+
+    }
+}
+```
 
 
+#### 5.2 xml配置数据源
 
+配置数据源（dbcp或c3p0）和jdbcTemplate  
 
+dao类
+```java
+package com.tomster.jdbctemp.dao;
 
+import org.springframework.jdbc.core.JdbcTemplate;
+
+/**
+ * @author meihewang
+ * @date 2019/11/13  22:40
+ */
+public class UserDao {
+
+    private JdbcTemplate jdbcTemplate;
+
+    public void setJdbcTemplate(JdbcTemplate jdbcTemplate) {
+        this.jdbcTemplate = jdbcTemplate;
+    }
+
+    public void addUser() {
+        String sql = "insert into t_user(username,password) values('cindy','456');";
+        jdbcTemplate.update(sql);
+    }
+}
+
+```
+
+xml配置数据源
+```xml
+<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
+    <property name="driverClassName" value="com.mysql.jdbc.Driver"></property>
+    <property name="url" value="jdbc:mysql://localhost:3306/spring"></property>
+    <property name="username" value="root"></property>
+    <property name="password" value="123456"></property>
+</bean>
+
+<bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+    <property name="dataSource" ref="dataSource"></property>
+</bean>
+
+<bean id="userDao" class="com.tomster.jdbctemp.dao.UserDao">
+    <property name="jdbcTemplate" ref="jdbcTemplate"></property>
+</bean>
+```
+
+为了简化配置，可以使dao继承JdbcDaoSupport
+
+```java
+package com.tomster.jdbctemp.dao;
+
+import org.springframework.jdbc.core.support.JdbcDaoSupport;
+
+/**
+ * @author meihewang
+ * @date 2019/11/13  22:40
+ */
+public class UserSupportDao extends JdbcDaoSupport{
+
+    public void addUser() {
+        String sql = "insert into t_user(username,password) values('lily','111');";
+        getJdbcTemplate().update(sql);
+    }
+
+}
+
+```
+
+```xml
+<context:property-placeholder location="classpath:db.properties"></context:property-placeholder>
+
+    <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
+        <property name="driverClassName" value="${db.driverClassName}"></property>
+        <property name="url" value="${db.url}"></property>
+        <property name="username" value="${db.username}"></property>
+        <property name="password" value="${db.password}"></property>
+    </bean>
+
+<!--    <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
+        <property name="driverClassName" value="com.mysql.jdbc.Driver"></property>
+        <property name="url" value="jdbc:mysql://localhost:3306/spring"></property>
+        <property name="username" value="root"></property>
+        <property name="password" value="123456"></property>
+    </bean>-->
+
+    <bean id="userSupportDao" class="com.tomster.jdbctemp.dao.UserSupportDao">
+        <property name="dataSource" ref="dataSource"></property>
+    </bean>
+```
+配置文件
+```properties
+db.driverClassName=com.mysql.jdbc.Driver
+db.url=jdbc:mysql://localhost:3306/spring
+db.username=root
+db.password=123456
+```
+注意：配置mysql不能用username，会有冲突，建议加前缀。
 
 
 
