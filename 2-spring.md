@@ -312,7 +312,7 @@ xml配置文件
 ### 2.注解方式  
 
 常用注解  
-* @component：取代了xml配置文件中的bean标签，默认参数表示id
+* @Component：取代了xml配置文件中的bean标签，默认参数表示id
 * @Controller-Service-Repository：mvc三层
 * @Autowired：自动根据类型注入
 * @Qualifier(“名称”)：指定自动注入的id名称
@@ -765,27 +765,29 @@ public class UserSupportDao extends JdbcDaoSupport{
 }
 
 ```
-
+xml配置文件
 ```xml
 <context:property-placeholder location="classpath:db.properties"></context:property-placeholder>
 
-    <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
-        <property name="driverClassName" value="${db.driverClassName}"></property>
-        <property name="url" value="${db.url}"></property>
-        <property name="username" value="${db.username}"></property>
-        <property name="password" value="${db.password}"></property>
-    </bean>
+<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
+    <property name="driverClassName" value="${db.driverClassName}"></property>
+    <property name="url" value="${db.url}"></property>
+    <property name="username" value="${db.username}"></property>
+    <property name="password" value="${db.password}"></property>
+</bean>
 
-<!--    <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
-        <property name="driverClassName" value="com.mysql.jdbc.Driver"></property>
-        <property name="url" value="jdbc:mysql://localhost:3306/spring"></property>
-        <property name="username" value="root"></property>
-        <property name="password" value="123456"></property>
-    </bean>-->
+<!--
+<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
+    <property name="driverClassName" value="com.mysql.jdbc.Driver"></property>
+    <property name="url" value="jdbc:mysql://localhost:3306/spring"></property>
+    <property name="username" value="root"></property>
+    <property name="password" value="123456"></property>
+</bean>
+-->
 
-    <bean id="userSupportDao" class="com.tomster.jdbctemp.dao.UserSupportDao">
-        <property name="dataSource" ref="dataSource"></property>
-    </bean>
+<bean id="userSupportDao" class="com.tomster.jdbctemp.dao.UserSupportDao">
+    <property name="dataSource" ref="dataSource"></property>
+</bean>
 ```
 配置文件
 ```properties
@@ -797,4 +799,219 @@ db.password=123456
 注意：配置mysql不能用username，会有冲突，建议加前缀。
 
 
+### 6. 事务管理  
+
+#### 6.1 手动配置事务
+xml
+```xml
+<!--读取属性文件-->
+<context:property-placeholder location="classpath:db.properties"></context:property-placeholder>
+<!--数据源-->
+<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
+    <property name="driverClassName" value="${db.driverClassName}"></property>
+    <property name="url" value="${db.url}"></property>
+    <property name="username" value="${db.username}"></property>
+    <property name="password" value="${db.password}"></property>
+</bean>
+<!--dao-->
+<bean id="accountDao" class="com.tomster.transaction.dao.AccountDao">
+    <property name="dataSource" ref="dataSource"></property>
+</bean>
+
+<!--平台事务管理器-->
+<bean id="txManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+    <property name="dataSource" ref="dataSource"></property>
+</bean>
+<!--事务模板-->
+<bean id="transactionTemplate" class="org.springframework.transaction.support.TransactionTemplate">
+    <property name="transactionManager" ref="txManager"></property>
+</bean>
+<!--service-->
+<bean id="accountService" class="com.tomster.transaction.service.AccountService">
+    <property name="accountDao" ref="accountDao"></property>
+    <property name="transactionTemplate" ref="transactionTemplate"></property>
+</bean>
+```
+
+service
+```java
+package com.tomster.transaction.service;
+
+import com.tomster.transaction.dao.AccountDao;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.TransactionStatus;
+import org.springframework.transaction.support.TransactionCallbackWithoutResult;
+import org.springframework.transaction.support.TransactionTemplate;
+
+/**
+ * @author meihewang
+ * @date 2019/11/15  0:15
+ */
+//@Service("accountService")
+public class AccountService {
+
+    //@Autowired
+    private AccountDao accountDao;
+
+    private TransactionTemplate transactionTemplate;
+    
+    public void transfer(String outer, String inner, int num){
+
+        transactionTemplate.execute(new TransactionCallbackWithoutResult() {
+            @Override
+            protected void doInTransactionWithoutResult(TransactionStatus transactionStatus) {
+                //step 1
+                accountDao.out(outer, num);
+
+                int i = 1/0;
+                //step 2
+                accountDao.in(inner, num);
+            }
+        });
+    }
+
+    //setter ommited
+}
+```
+
+dao
+```java 
+package com.tomster.transaction.dao;
+
+import org.springframework.jdbc.core.support.JdbcDaoSupport;
+
+/**
+ * @author meihewang
+ * @date 2019/11/15  0:03
+ */
+
+public class AccountDao extends JdbcDaoSupport{
+
+    public void out(String outer, Integer num){
+        String sql = "update account set balance = balance-? where user = ?";
+        getJdbcTemplate().update(sql, num, outer);
+    }
+
+    public void in(String inner, Integer num){
+        String sql = "update account set balance = balance+? where user = ?";
+        getJdbcTemplate().update(sql, num, inner);
+    }
+}
+```
+
+#### 6.2 基于AOP的事务配置
+xml配置事务管理器、通知和切点
+```xml
+<!--读取属性文件-->
+<context:property-placeholder location="classpath:db.properties"></context:property-placeholder>
+
+<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
+    <property name="driverClassName" value="${db.driverClassName}"></property>
+    <property name="url" value="${db.url}"></property>
+    <property name="username" value="${db.username}"></property>
+    <property name="password" value="${db.password}"></property>
+</bean>
+
+<bean id="accountDao" class="com.tomster.transaction.dao.AccountDao">
+    <property name="dataSource" ref="dataSource"></property>
+</bean>
+
+<!--事务模板-->
+<!--<bean id="transactionTemplate" class="org.springframework.transaction.support.TransactionTemplate">
+    <property name="transactionManager" ref="txManager"></property>
+</bean>-->
+
+<bean id="accountService" class="com.tomster.transaction.service.AccountTxService">
+    <property name="accountDao" ref="accountDao"></property>
+    <!--<property name="transactionTemplate" ref="transactionTemplate"></property>-->
+</bean>
+
+<!--平台事务管理器-->
+<bean id="txManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+    <property name="dataSource" ref="dataSource"></property>
+</bean>
+<!--基于AOP的事务配置-->
+<tx:advice id="txAdvice" transaction-manager="txManager">
+    <tx:attributes>
+        <tx:method name="transfer" isolation="DEFAULT" propagation="REQUIRED" read-only="false"/>
+    </tx:attributes>
+</tx:advice>
+<!--通知和切入点关联-->
+<aop:config>
+    <aop:advisor advice-ref="txAdvice" pointcut="execution(* com.tomster.transaction.service..*.*(..))"></aop:advisor>
+</aop:config>
+```
+service内去除了事务模板的配置
+```java
+package com.tomster.transaction.service;
+
+import com.tomster.transaction.dao.AccountDao;
+import org.springframework.transaction.TransactionStatus;
+import org.springframework.transaction.support.TransactionCallbackWithoutResult;
+import org.springframework.transaction.support.TransactionTemplate;
+
+/**
+ * @author meihewang
+ * @date 2019/11/15  1:26
+ */
+public class AccountTxService {
+
+    private AccountDao accountDao;
+
+    public void transfer(String outer, String inner, int num){
+        //step 1
+        accountDao.out(outer, num);
+        //int i = 1/0;
+        //step 2
+        accountDao.in(inner, num);
+    }
+    //setter omitted
+}
+```
+
+#### 6.3 注解配置
+
+xml配置事务管理器，开启注解
+```xml
+<!--注解事务配置-->
+<!--1.平台事务管理器-->
+<bean id="txManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+    <property name="dataSource" ref="dataSource"></property>
+</bean>
+<!--2.开启注解-->
+<tx:annotation-driven transaction-manager="txManager"></tx:annotation-driven>
+```
+类或者方法上加@Transactional注解
+```java
+package com.tomster.transaction.service;
+
+import com.tomster.transaction.dao.AccountDao;
+import org.springframework.transaction.annotation.Isolation;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
+
+/**
+ * @author meihewang
+ * @date 2019/11/15  1:44
+ */
+@Transactional(propagation = Propagation.REQUIRED, isolation = Isolation.DEFAULT)
+public class AccountAnnoService {
+
+    private AccountDao accountDao;
+
+    public void setAccountDao(AccountDao accountDao) {
+        this.accountDao = accountDao;
+    }
+
+    public void transfer(String outer, String inner, int num){
+        //step 1
+        accountDao.out(outer, num);
+        int i = 1/0;
+        //step 2
+        accountDao.in(inner, num);
+    }
+}
+
+```
 
