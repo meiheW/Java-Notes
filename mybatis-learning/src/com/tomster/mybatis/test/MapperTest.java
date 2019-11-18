@@ -1,5 +1,6 @@
 package com.tomster.mybatis.test;
 
+import com.tomster.mybatis.mapper.UserMapper;
 import com.tomster.mybatis.po.User;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
@@ -11,13 +12,12 @@ import org.junit.Test;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.Date;
 
 /**
  * @author meihewang
- * @date 2019/11/17  2:30
+ * @date 2019/11/18  23:28
  */
-public class MyTest {
+public class MapperTest {
 
     SqlSession sqlSession;
 
@@ -39,19 +39,9 @@ public class MyTest {
 
     @Test
     public void test1() {
-        //4.调用SqlSession的操作数据库方法
-        User user = sqlSession.selectOne("findUserById", 10);
+        UserMapper mapper = sqlSession.getMapper(UserMapper.class);
+        User user = mapper.findUserById(10);
         System.out.println(user);
-    }
 
-    @Test
-    public void test2() {
-        User user = new User();
-        user.setUsername("wmh");
-        user.setAddress("sh");
-        user.setSex("m");
-        user.setBirthday(new Date(93,2,1));
-        sqlSession.insert("insertUser", user);
     }
-
 }

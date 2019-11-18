@@ -94,9 +94,15 @@ public void test() throws IOException {
     User user = sqlSession.selectOne("findUserById", 10);
     System.out.println(user);
     //5.关闭SqlSession
-    sqlSession.commit();
+    sqlSession.close();
 }
 
 output:
 User [id=10, username=张三, sex=1, birthday=Thu Jul 10 00:00:00 CST 2014, address=北京市]
 ```
+
+## mapper代理方式实现dao
+
+### 1.mapper开发规范  
+
+
