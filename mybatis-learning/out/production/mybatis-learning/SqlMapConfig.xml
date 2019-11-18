@@ -21,8 +21,12 @@
         </environment>
     </environments>
 
-    <!--告诉mybatis加载映射文件-->
+    <!--mybatis加载映射文件-->
     <mappers>
-        <mapper resource="com/tomster/mybatis/sqlmap/UserMapper.xml"></mapper>
+        <!--<mapper resource="com/tomster/mybatis/sqlmap/UserMapper.xml"></mapper>-->
+
+        <!--<mapper class="com.tomster.mybatis.mapper.UserMapper"/>-->
+        <package name="com.tomster.mybatis.mapper"/>
+
     </mappers>
 </configuration>

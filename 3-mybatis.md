@@ -103,6 +103,65 @@ User [id=10, username=张三, sex=1, birthday=Thu Jul 10 00:00:00 CST 2014, addr
 
 ## mapper代理方式实现dao
 
-### 1.mapper开发规范  
+### 1.开发规范  
+* mapper接口的全限定名要和mapper映射文件的namespace的值相同;
+* mapper接口的方法名称要和mapper映射文件中的statement的id相同;
+* mapper接口的方法参数只能有一个，且类型要和mapper映射文件中statement的parameterType的值保持一致;
+* mapper接口的返回值类型要和mapper映射文件中statement的resultType值或resultMap中的type值保持一致。
+
+
+### 2.具体实现
+
+```java
+package com.tomster.mybatis.mapper;
+
+import com.tomster.mybatis.po.User;
+
+/**
+ * @author meihewang
+ * @date 2019/11/18  23:20
+ */
+public interface UserMapper {
+
+    public int insertUser(User user);
+
+    public User findUserById(int id);
+
+}
+```  
+
+UserMapper.xml
+```xml
+<mapper namespace="com.tomster.mybatis.mapper.UserMapper">
+    <select id="findUserById" parameterType="int" resultType="com.tomster.mybatis.po.User">
+        SELECT * FROM user WHERE id = #{id}
+    </select>
+    <insert id="insertUser" parameterType="com.tomster.mybatis.po.User">
+        INSERT INTO USER (username,sex,birthday,address)
+        VALUE (#{username},#{sex},#{birthday},#{address})
+    </insert>
+</mapper>
+```  
+
+test code
+```java
+UserMapper mapper = sqlSession.getMapper(UserMapper.class);
+User user = mapper.findUserById(10);
+System.out.println(user);
+```  
+
+### 3.加载映射文件的方式  
+```xml
+<!--mybatis加载映射文件-->
+<mappers>
+    <!--指定xml映射文件-->
+    <mapper resource="com/tomster/mybatis/sqlmap/UserMapper.xml"></mapper>
+    <!--指定mapper类文件，须与映射文件位于同一包内-->
+    <mapper class="com.tomster.mybatis.mapper.UserMapper"/>
+    <!--指定包，mapper与映射文件位于同一包内-->
+    <package name="com.tomster.mybatis.mapper"/>
+</mappers>
+```
+
 
 
