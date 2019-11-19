@@ -163,5 +163,41 @@ System.out.println(user);
 </mappers>
 ```
 
+## 设置
 
+### 别名  
+```xml
+<typeAliases>
+    <package name="com.tomster.mybatis.vo"></package>
+    <package name="com.tomster.mybatis.po"></package>
+</typeAliases>
+``` 
+
+### 动态sql
+```xml
+<select id="userList" parameterType="com.tomster.mybatis.po.User" resultType="com.tomster.mybatis.po.User">
+    SELECT * FROM USER
+    <where>
+        <if test="username!=null">and username like '%${username}%'</if>
+        <if test="sex!=null">and sex=#{sex}</if>
+    </where>
+</select>
+```
+
+
+### foreach  
+
+```xml
+<select id="userListByIds" parameterType="com.tomster.mybatis.vo.QueryVo" resultType="com.tomster.mybatis.po.User">
+    SELECT * FROM USER
+    <where>
+        <if test="ids!=null and ids.size>0">
+            <foreach collection="ids" item="id" open="id in (" close=")" separator=",">
+                ${id}
+            </foreach>
+        </if>
+
+    </where>
+</select>
+``
 

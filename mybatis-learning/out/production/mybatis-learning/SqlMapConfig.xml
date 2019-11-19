@@ -6,6 +6,12 @@
 
     <properties resource="db.properties"/>
 
+    <typeAliases>
+        <package name="com.tomster.mybatis.vo"></package>
+        <package name="com.tomster.mybatis.po"></package>
+    </typeAliases>
+
+
     <!-- 配置mybatis的环境信息 -->
     <environments default="development">
         <environment id="development">
@@ -23,10 +29,13 @@
 
     <!--mybatis加载映射文件-->
     <mappers>
-        <!--<mapper resource="com/tomster/mybatis/sqlmap/UserMapper.xml"></mapper>-->
-
-        <!--<mapper class="com.tomster.mybatis.mapper.UserMapper"/>-->
-        <package name="com.tomster.mybatis.mapper"/>
-
+        <!--指定xml映射文件-->
+        <mapper resource="com/tomster/mybatis/sqlmap/UserMapper.xml"></mapper>
+<!--        &lt;!&ndash;指定mapper类文件，须与映射文件位于同一包内&ndash;&gt;
+        <mapper class="com.tomster.mybatis.mapper.UserMapper"/>
+        &lt;!&ndash;指定包，mapper与映射文件位于同一包内&ndash;&gt;
+        <package name="com.tomster.mybatis.mapper"/>-->
     </mappers>
+
+
 </configuration>

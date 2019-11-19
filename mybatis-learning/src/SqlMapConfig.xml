@@ -6,6 +6,12 @@
 
     <properties resource="db.properties"/>
 
+    <typeAliases>
+        <package name="com.tomster.mybatis.vo"></package>
+        <package name="com.tomster.mybatis.po"></package>
+    </typeAliases>
+
+
     <!-- 配置mybatis的环境信息 -->
     <environments default="development">
         <environment id="development">
@@ -30,4 +36,6 @@
         &lt;!&ndash;指定包，mapper与映射文件位于同一包内&ndash;&gt;
         <package name="com.tomster.mybatis.mapper"/>-->
     </mappers>
+
+
 </configuration>
