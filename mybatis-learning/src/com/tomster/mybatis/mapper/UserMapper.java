@@ -2,8 +2,10 @@ package com.tomster.mybatis.mapper;
 
 import com.tomster.mybatis.po.User;
 import com.tomster.mybatis.vo.QueryVo;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * @author meihewang
@@ -21,4 +23,14 @@ public interface UserMapper {
 
     public List<User> userListByIds(QueryVo queryVo);
 
+    public List<User> findUserByMap(Map<String, Object> parameterMap);
+
+    public List<User> findUserByParam(@Param("username") String username,
+                                      @Param("sex") String sex,
+                                      @Param("address") String address);
+
+    public List<Map<String, Object>> findMapUserByMap(Map<String, Object> parameterMap);
+
+
+    public User findUserResultMap(int id);
 }

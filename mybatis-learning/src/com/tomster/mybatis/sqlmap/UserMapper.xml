@@ -10,6 +10,21 @@
         SELECT * FROM user WHERE id = #{id}
     </select>
 
+    <select id="findUserByMap" parameterType="map" resultType="com.tomster.mybatis.po.User">
+        SELECT * FROM user WHERE sex = #{sex} AND username like concat('%',#{username},'%')
+    </select>
+
+    <select id="findUserByParam" resultType="com.tomster.mybatis.po.User">
+        SELECT * FROM user
+        WHERE sex = #{sex}
+        AND username like concat('%',#{username},'%')
+        AND address = #{address}
+    </select>
+
+    <select id="findMapUserByMap" parameterType="map" resultType="map">
+        SELECT * FROM user WHERE sex = #{sex} AND username like concat('%',#{username},'%')
+    </select>
+
     <insert id="insertUser" parameterType="com.tomster.mybatis.po.User">
         INSERT INTO USER (username,sex,birthday,address)
         VALUE (#{username},#{sex},#{birthday},#{address})
@@ -35,7 +50,19 @@
                   ${id}
               </foreach>
             </if>
-
         </where>
+    </select>
+
+    <!--定义resultMap-->
+    <resultMap id="userResultMap" type="com.tomster.mybatis.po.User">
+        <id property="id" column="id"></id>
+        <result property="username" column="username"></result>
+        <result property="birthday" column="birthday"></result>
+        <result property="sex" column="sex"></result>
+        <result property="address" column="address"></result>
+    </resultMap>
+    <!--使用resultMap作为输出类型-->
+    <select id="findUserResultMap" parameterType="int" resultMap="userResultMap">
+        SELECT * FROM user WHERE id = #{id}
     </select>
 </mapper>

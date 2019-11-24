@@ -16,7 +16,7 @@
         <entry file="file://$PROJECT_DIR$/src/SqlMapConfig.xml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="330">
-              <caret line="11" column="18" lean-forward="true" selection-start-line="11" selection-start-column="18" selection-end-line="11" selection-end-column="18" />
+              <caret line="11" column="18" lean-forward="false" selection-start-line="11" selection-start-column="18" selection-end-line="11" selection-end-column="18" />
               <folding />
             </state>
           </provider>
@@ -25,15 +25,19 @@
       <file leaf-file-name="UserMapper.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/tomster/mybatis/sqlmap/UserMapper.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="527">
-              <caret line="37" column="0" lean-forward="true" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
+            <state relative-caret-position="303">
+              <caret line="67" column="9" lean-forward="true" selection-start-line="67" selection-start-column="9" selection-end-line="67" selection-end-column="9" />
               <folding>
-                <marker date="1574179820801" expanded="true" signature="326:361" ph="SELECT * FRO... user" />
-                <marker date="1574179820801" expanded="true" signature="458:564" ph="INSERT INTO USER... " />
-                <marker date="1574179820801" expanded="true" signature="677:702" ph="SELECT COUNT... user" />
-                <marker date="1574179820801" expanded="true" signature="677:755" ph="SELECT COUNT... user" />
-                <marker date="1574179820801" expanded="true" signature="892:910" ph="SELECT * FRO... USER" />
-                <marker date="1574179820801" expanded="true" signature="1217:1235" ph="SELECT * FRO... USER" />
+                <marker date="1574602969927" expanded="true" signature="326:361" ph="SELECT * FRO... user" />
+                <marker date="1574602969927" expanded="true" signature="478:561" ph="SELECT * FRO... user" />
+                <marker date="1574602969927" expanded="true" signature="660:792" ph="SELECT * FRO... user" />
+                <marker date="1574602969927" expanded="true" signature="888:971" ph="SELECT * FRO... user" />
+                <marker date="1574602969927" expanded="true" signature="1068:1174" ph="INSERT INTO USER... " />
+                <marker date="1574602969927" expanded="true" signature="1287:1312" ph="SELECT COUNT... user" />
+                <marker date="1574602969927" expanded="true" signature="1287:1365" ph="SELECT COUNT... user" />
+                <marker date="1574602969927" expanded="true" signature="1502:1520" ph="SELECT * FRO... USER" />
+                <marker date="1574602969927" expanded="true" signature="1827:1845" ph="SELECT * FRO... USER" />
+                <marker date="1574602969927" expanded="true" signature="2617:2652" ph="SELECT * FRO... user" />
               </folding>
             </state>
           </provider>
@@ -43,7 +47,7 @@
         <entry file="file://$PROJECT_DIR$/src/com/tomster/mybatis/vo/QueryVo.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="240">
-              <caret line="8" column="16" lean-forward="true" selection-start-line="8" selection-start-column="16" selection-end-line="8" selection-end-column="16" />
+              <caret line="8" column="16" lean-forward="false" selection-start-line="8" selection-start-column="16" selection-end-line="8" selection-end-column="16" />
               <folding>
                 <element signature="e#195#196#0" expanded="true" />
                 <element signature="e#221#222#0" expanded="true" />
@@ -57,8 +61,8 @@
       <file leaf-file-name="MyTest.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/tomster/mybatis/test/MyTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="275">
-              <caret line="45" column="0" lean-forward="true" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
+            <state relative-caret-position="875">
+              <caret line="50" column="30" lean-forward="true" selection-start-line="50" selection-start-column="30" selection-end-line="50" selection-end-column="30" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -66,21 +70,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Main.java">
+      <file leaf-file-name="SqlSession.class" pinned="false" current-in-tab="false">
+        <entry file="jar://$PROJECT_DIR$/lib/mybatis-3.2.7.jar!/org/apache/ibatis/session/SqlSession.class">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="13" lean-forward="false" selection-start-line="0" selection-start-column="13" selection-end-line="0" selection-end-column="13" />
+            <state relative-caret-position="281">
+              <caret line="38" column="8" lean-forward="false" selection-start-line="38" selection-start-column="8" selection-end-line="38" selection-end-column="8" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MapperTest.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="MapperTest.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/tomster/mybatis/test/MapperTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="365">
-              <caret line="45" column="44" lean-forward="true" selection-start-line="44" selection-start-column="8" selection-end-line="45" selection-end-column="44" />
+            <state relative-caret-position="303">
+              <caret line="58" column="0" lean-forward="true" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -88,34 +92,38 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UserMapper.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/tomster/mybatis/mapper/UserMapper.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="215">
-              <caret line="10" column="3" lean-forward="true" selection-start-line="10" selection-start-column="3" selection-end-line="10" selection-end-column="3" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="db.properties" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/db.properties">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="3" column="15" lean-forward="false" selection-start-line="3" selection-start-column="15" selection-end-line="3" selection-end-column="15" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="log4j.properties" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/log4j.properties">
+      <file leaf-file-name="ParamTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/tomster/mybatis/test/ParamTest.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="150">
-              <caret line="5" column="18" lean-forward="false" selection-start-line="5" selection-start-column="18" selection-end-line="5" selection-end-column="18" />
-              <folding />
+              <caret line="41" column="9" lean-forward="true" selection-start-line="41" selection-start-column="9" selection-end-line="41" selection-end-column="9" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ResultMapTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/tomster/mybatis/test/ResultMapTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="291">
+              <caret line="47" column="5" lean-forward="true" selection-start-line="47" selection-start-column="5" selection-end-line="47" selection-end-column="5" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UserMapper.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/tomster/mybatis/mapper/UserMapper.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="303">
+              <caret line="36" column="0" lean-forward="true" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -123,8 +131,8 @@
       <file leaf-file-name="User.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/tomster/mybatis/po/User.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="3" column="22" lean-forward="true" selection-start-line="3" selection-start-column="22" selection-end-line="3" selection-end-column="22" />
+            <state relative-caret-position="60">
+              <caret line="3" column="22" lean-forward="false" selection-start-line="3" selection-start-column="22" selection-end-line="3" selection-end-column="22" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#337#338#0" expanded="true" />
@@ -176,13 +184,15 @@
       <list>
         <option value="$PROJECT_DIR$/src/db.properties" />
         <option value="$PROJECT_DIR$/src/com/tomster/mybatis/mapper/UserMapper.xml" />
-        <option value="$PROJECT_DIR$/src/com/tomster/mybatis/test/MyTest.java" />
         <option value="$PROJECT_DIR$/src/com/tomster/mybatis/vo/QueryVo.java" />
-        <option value="$PROJECT_DIR$/src/com/tomster/mybatis/mapper/UserMapper.java" />
         <option value="$PROJECT_DIR$/src/com/tomster/mybatis/test/MapperTest.java" />
         <option value="$PROJECT_DIR$/src/SqlMapConfig.xml" />
-        <option value="$PROJECT_DIR$/src/com/tomster/mybatis/sqlmap/UserMapper.xml" />
         <option value="$PROJECT_DIR$/src/com/tomster/mybatis/po/User.java" />
+        <option value="$PROJECT_DIR$/src/com/tomster/mybatis/test/MyTest.java" />
+        <option value="$PROJECT_DIR$/src/com/tomster/mybatis/test/ParamTest.java" />
+        <option value="$PROJECT_DIR$/src/com/tomster/mybatis/mapper/UserMapper.java" />
+        <option value="$PROJECT_DIR$/src/com/tomster/mybatis/test/ResultMapTest.java" />
+        <option value="$PROJECT_DIR$/src/com/tomster/mybatis/sqlmap/UserMapper.xml" />
       </list>
     </option>
   </component>
@@ -192,9 +202,9 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
-    <option name="x" value="-57" />
-    <option name="y" value="12" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-74" />
+    <option name="y" value="51" />
     <option name="width" value="1938" />
     <option name="height" value="1048" />
   </component>
@@ -213,8 +223,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
-      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -272,8 +281,9 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="AndroidView" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -303,32 +313,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.MapperTest.testForeach">
-    <configuration name="MapperTest.test1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="com.tomster.mybatis.test.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="mybatis-learning" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="com.tomster.mybatis.test" />
-      <option name="MAIN_CLASS_NAME" value="com.tomster.mybatis.test.MapperTest" />
-      <option name="METHOD_NAME" value="test1" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-    </configuration>
+  <component name="RunManager" selected="JUnit.ResultMapTest.testResultMap">
     <configuration name="MapperTest.testForeach" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -342,31 +327,6 @@
       <option name="PACKAGE_NAME" value="com.tomster.mybatis.test" />
       <option name="MAIN_CLASS_NAME" value="com.tomster.mybatis.test.MapperTest" />
       <option name="METHOD_NAME" value="testForeach" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-    </configuration>
-    <configuration name="MapperTest.testMapper" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="com.tomster.mybatis.test.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="mybatis-learning" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="com.tomster.mybatis.test" />
-      <option name="MAIN_CLASS_NAME" value="com.tomster.mybatis.test.MapperTest" />
-      <option name="METHOD_NAME" value="testMapper" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" />
       <option name="PARAMETERS" />
@@ -404,7 +364,7 @@
       <envs />
       <patterns />
     </configuration>
-    <configuration name="MyTest.test2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ParamTest.testParamAnno" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
           <option name="PATTERN" value="com.tomster.mybatis.test.*" />
@@ -415,8 +375,58 @@
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="com.tomster.mybatis.test" />
-      <option name="MAIN_CLASS_NAME" value="com.tomster.mybatis.test.MyTest" />
-      <option name="METHOD_NAME" value="test2" />
+      <option name="MAIN_CLASS_NAME" value="com.tomster.mybatis.test.ParamTest" />
+      <option name="METHOD_NAME" value="testParamAnno" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+    </configuration>
+    <configuration name="ParamTest.testParamMap" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="com.tomster.mybatis.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="mybatis-learning" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="com.tomster.mybatis.test" />
+      <option name="MAIN_CLASS_NAME" value="com.tomster.mybatis.test.ParamTest" />
+      <option name="METHOD_NAME" value="testParamMap" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+    </configuration>
+    <configuration name="ResultMapTest.testResultMap" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="com.tomster.mybatis.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="mybatis-learning" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="com.tomster.mybatis.test" />
+      <option name="MAIN_CLASS_NAME" value="com.tomster.mybatis.test.ResultMapTest" />
+      <option name="METHOD_NAME" value="testResultMap" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" />
       <option name="PARAMETERS" />
@@ -445,19 +455,19 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="JUnit.MyTest.test2" />
-      <item index="1" class="java.lang.String" itemvalue="JUnit.MapperTest.test1" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.MapperTest.testMapper" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.MapperTest.testWhere" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.MapperTest.testForeach" />
+      <item index="0" class="java.lang.String" itemvalue="JUnit.MapperTest.testWhere" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.MapperTest.testForeach" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.ParamTest.testParamMap" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.ParamTest.testParamAnno" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.ResultMapTest.testResultMap" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.MapperTest.testForeach" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.MapperTest.testWhere" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.MapperTest.testMapper" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.MapperTest.test1" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.MyTest.test2" />
+        <item index="0" class="java.lang.String" itemvalue="JUnit.ResultMapTest.testResultMap" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.ParamTest.testParamAnno" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.ParamTest.testParamMap" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.MapperTest.testForeach" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.MapperTest.testWhere" />
       </list>
     </recent_temporary>
   </component>
@@ -479,29 +489,12 @@
       <workItem from="1573991505256" duration="3461000" />
       <workItem from="1574090235901" duration="2762000" />
       <workItem from="1574174605973" duration="5491000" />
-      <workItem from="1574521678211" duration="7737000" />
+      <workItem from="1574521678211" duration="7891000" />
+      <workItem from="1574594402393" duration="7519000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="MapperTest_testForeach - 2019.11.20 at 00h 06m 18s.xml">
-      <configuration name="MapperTest.testForeach" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="MapperTest_testForeach - 2019.11.20 at 00h 09m 58s.xml">
-      <configuration name="MapperTest.testForeach" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="MapperTest_testMapper - 2019.11.19 at 23h 03m 02s.xml">
-      <configuration name="MapperTest.testMapper" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="MapperTest_testMapper - 2019.11.19 at 23h 03m 45s.xml">
-      <configuration name="MapperTest.testMapper" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="MapperTest_testMapper - 2019.11.19 at 23h 15m 59s.xml">
-      <configuration name="MapperTest.testMapper" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="MapperTest_testMapper - 2019.11.19 at 23h 17m 13s.xml">
-      <configuration name="MapperTest.testMapper" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="MapperTest_testMapper - 2019.11.19 at 23h 17m 32s.xml">
       <configuration name="MapperTest.testMapper" configurationId="JUnit" />
     </history-entry>
@@ -514,39 +507,57 @@
     <history-entry file="MyTest_test2 - 2019.11.17 at 20h 50m 11s.xml">
       <configuration name="MyTest.test2" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="ParamTest_testParamAnno - 2019.11.24 at 20h 45m 22s.xml">
+      <configuration name="ParamTest.testParamAnno" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ParamTest_testParamAnno - 2019.11.24 at 20h 45m 51s.xml">
+      <configuration name="ParamTest.testParamAnno" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ParamTest_testParamMap - 2019.11.24 at 20h 16m 52s.xml">
+      <configuration name="ParamTest.testParamMap" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ParamTest_testParamMap - 2019.11.24 at 20h 18m 44s.xml">
+      <configuration name="ParamTest.testParamMap" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ResultMapTest_testResultMap - 2019.11.24 at 21h 36m 09s.xml">
+      <configuration name="ResultMapTest.testResultMap" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ResultMapTest_testResultMap - 2019.11.24 at 21h 40m 16s.xml">
+      <configuration name="ResultMapTest.testResultMap" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="24165000" />
+    <option name="totallyTimeSpent" value="31838000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-9" y="-9" width="1938" height="1048" extended-state="7" />
+    <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.328" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3993135" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.09828571" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26877683" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2725322" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.35926774" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.4137143" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.328" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
@@ -558,10 +569,103 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/tomster/mybatis/test/ResultMapTest.java</url>
+          <line>46</line>
+          <properties />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="1" />
+    </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/com/tomster/mybatis/test/MyTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1350">
+          <caret line="45" column="0" lean-forward="true" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="13" lean-forward="false" selection-start-line="0" selection-start-column="13" selection-end-line="0" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/tomster/mybatis/mapper/UserMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="10" column="3" lean-forward="true" selection-start-line="10" selection-start-column="3" selection-end-line="10" selection-end-column="3" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/db.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="3" column="15" lean-forward="false" selection-start-line="3" selection-start-column="15" selection-end-line="3" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/log4j.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="5" column="18" lean-forward="false" selection-start-line="5" selection-start-column="18" selection-end-line="5" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/tomster/mybatis/po/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="3" column="22" lean-forward="true" selection-start-line="3" selection-start-column="22" selection-end-line="3" selection-end-column="22" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#337#338#0" expanded="true" />
+            <element signature="e#362#363#0" expanded="true" />
+            <element signature="e#394#395#0" expanded="true" />
+            <element signature="e#422#423#0" expanded="true" />
+            <element signature="e#456#457#0" expanded="true" />
+            <element signature="e#487#488#0" expanded="true" />
+            <element signature="e#534#535#0" expanded="true" />
+            <element signature="e#574#575#0" expanded="true" />
+            <element signature="e#603#604#0" expanded="true" />
+            <element signature="e#629#630#0" expanded="true" />
+            <element signature="e#666#667#0" expanded="true" />
+            <element signature="e#696#697#0" expanded="true" />
+            <element signature="e#728#729#0" expanded="true" />
+            <element signature="e#759#760#0" expanded="true" />
+            <element signature="e#804#805#0" expanded="true" />
+            <element signature="e#844#845#0" expanded="true" />
+            <element signature="e#877#878#0" expanded="true" />
+            <element signature="e#907#908#0" expanded="true" />
+            <element signature="e#952#953#0" expanded="true" />
+            <element signature="e#990#991#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/tomster/mybatis/test/MapperTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="870">
+          <caret line="43" column="25" lean-forward="true" selection-start-line="43" selection-start-column="25" selection-end-line="43" selection-end-column="25" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/SqlMapConfig.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -575,12 +679,16 @@
         <state relative-caret-position="180">
           <caret line="6" column="0" lean-forward="true" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
           <folding>
-            <marker date="1574179820801" expanded="true" signature="326:361" ph="SELECT * FRO... user" />
-            <marker date="1574179820801" expanded="true" signature="458:564" ph="INSERT INTO USER... " />
-            <marker date="1574179820801" expanded="true" signature="677:702" ph="SELECT COUNT... user" />
-            <marker date="1574179820801" expanded="true" signature="677:755" ph="SELECT COUNT... user" />
-            <marker date="1574179820801" expanded="true" signature="892:910" ph="SELECT * FRO... USER" />
-            <marker date="1574179820801" expanded="true" signature="1217:1235" ph="SELECT * FRO... USER" />
+            <marker date="1574602969927" expanded="true" signature="326:361" ph="SELECT * FRO... user" />
+            <marker date="1574602969927" expanded="true" signature="478:561" ph="SELECT * FRO... user" />
+            <marker date="1574602969927" expanded="true" signature="660:792" ph="SELECT * FRO... user" />
+            <marker date="1574602969927" expanded="true" signature="888:971" ph="SELECT * FRO... user" />
+            <marker date="1574602969927" expanded="true" signature="1068:1174" ph="INSERT INTO USER... " />
+            <marker date="1574602969927" expanded="true" signature="1287:1312" ph="SELECT COUNT... user" />
+            <marker date="1574602969927" expanded="true" signature="1287:1365" ph="SELECT COUNT... user" />
+            <marker date="1574602969927" expanded="true" signature="1502:1520" ph="SELECT * FRO... USER" />
+            <marker date="1574602969927" expanded="true" signature="1827:1845" ph="SELECT * FRO... USER" />
+            <marker date="1574602969927" expanded="true" signature="2617:2652" ph="SELECT * FRO... user" />
           </folding>
         </state>
       </provider>
@@ -674,12 +782,16 @@
         <state relative-caret-position="360">
           <caret line="12" column="26" lean-forward="false" selection-start-line="12" selection-start-column="16" selection-end-line="12" selection-end-column="26" />
           <folding>
-            <marker date="1574179820801" expanded="true" signature="326:361" ph="SELECT * FRO... user" />
-            <marker date="1574179820801" expanded="true" signature="458:564" ph="INSERT INTO USER... " />
-            <marker date="1574179820801" expanded="true" signature="677:702" ph="SELECT COUNT... user" />
-            <marker date="1574179820801" expanded="true" signature="677:755" ph="SELECT COUNT... user" />
-            <marker date="1574179820801" expanded="true" signature="892:910" ph="SELECT * FRO... USER" />
-            <marker date="1574179820801" expanded="true" signature="1217:1235" ph="SELECT * FRO... USER" />
+            <marker date="1574602969927" expanded="true" signature="326:361" ph="SELECT * FRO... user" />
+            <marker date="1574602969927" expanded="true" signature="478:561" ph="SELECT * FRO... user" />
+            <marker date="1574602969927" expanded="true" signature="660:792" ph="SELECT * FRO... user" />
+            <marker date="1574602969927" expanded="true" signature="888:971" ph="SELECT * FRO... user" />
+            <marker date="1574602969927" expanded="true" signature="1068:1174" ph="INSERT INTO USER... " />
+            <marker date="1574602969927" expanded="true" signature="1287:1312" ph="SELECT COUNT... user" />
+            <marker date="1574602969927" expanded="true" signature="1287:1365" ph="SELECT COUNT... user" />
+            <marker date="1574602969927" expanded="true" signature="1502:1520" ph="SELECT * FRO... USER" />
+            <marker date="1574602969927" expanded="true" signature="1827:1845" ph="SELECT * FRO... USER" />
+            <marker date="1574602969927" expanded="true" signature="2617:2652" ph="SELECT * FRO... user" />
           </folding>
         </state>
       </provider>
@@ -753,12 +865,16 @@
         <state relative-caret-position="150">
           <caret line="5" column="25" lean-forward="true" selection-start-line="5" selection-start-column="25" selection-end-line="5" selection-end-column="25" />
           <folding>
-            <marker date="1574179820801" expanded="true" signature="326:361" ph="SELECT * FRO... user" />
-            <marker date="1574179820801" expanded="true" signature="458:564" ph="INSERT INTO USER... " />
-            <marker date="1574179820801" expanded="true" signature="677:702" ph="SELECT COUNT... user" />
-            <marker date="1574179820801" expanded="true" signature="677:755" ph="SELECT COUNT... user" />
-            <marker date="1574179820801" expanded="true" signature="892:910" ph="SELECT * FRO... USER" />
-            <marker date="1574179820801" expanded="true" signature="1217:1235" ph="SELECT * FRO... USER" />
+            <marker date="1574602969927" expanded="true" signature="326:361" ph="SELECT * FRO... user" />
+            <marker date="1574602969927" expanded="true" signature="478:561" ph="SELECT * FRO... user" />
+            <marker date="1574602969927" expanded="true" signature="660:792" ph="SELECT * FRO... user" />
+            <marker date="1574602969927" expanded="true" signature="888:971" ph="SELECT * FRO... user" />
+            <marker date="1574602969927" expanded="true" signature="1068:1174" ph="INSERT INTO USER... " />
+            <marker date="1574602969927" expanded="true" signature="1287:1312" ph="SELECT COUNT... user" />
+            <marker date="1574602969927" expanded="true" signature="1287:1365" ph="SELECT COUNT... user" />
+            <marker date="1574602969927" expanded="true" signature="1502:1520" ph="SELECT * FRO... USER" />
+            <marker date="1574602969927" expanded="true" signature="1827:1845" ph="SELECT * FRO... USER" />
+            <marker date="1574602969927" expanded="true" signature="2617:2652" ph="SELECT * FRO... user" />
           </folding>
         </state>
       </provider>
@@ -861,13 +977,6 @@
     <entry file="file://$PROJECT_DIR$/src/com/A.java" />
     <entry file="file://$PROJECT_DIR$/src/com/tomster/B.java" />
     <entry file="file://$PROJECT_DIR$/src/com/tomster/mybatis/C.java" />
-    <entry file="jar://$PROJECT_DIR$/lib/mybatis-3.2.7.jar!/org/apache/ibatis/session/SqlSession.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="16" column="10" lean-forward="false" selection-start-line="16" selection-start-column="10" selection-end-line="16" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://D:/JavaTools/Java/jdk1.8.0_121/src.zip!/java/util/Date.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="288">
@@ -908,7 +1017,7 @@
     <entry file="file://$PROJECT_DIR$/src/com/tomster/mybatis/vo/QueryVo.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
-          <caret line="8" column="16" lean-forward="true" selection-start-line="8" selection-start-column="16" selection-end-line="8" selection-end-column="16" />
+          <caret line="8" column="16" lean-forward="false" selection-start-line="8" selection-start-column="16" selection-end-line="8" selection-end-column="16" />
           <folding>
             <element signature="e#195#196#0" expanded="true" />
             <element signature="e#221#222#0" expanded="true" />
@@ -921,15 +1030,15 @@
     <entry file="file://$PROJECT_DIR$/src/SqlMapConfig.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
-          <caret line="11" column="18" lean-forward="true" selection-start-line="11" selection-start-column="18" selection-end-line="11" selection-end-column="18" />
+          <caret line="11" column="18" lean-forward="false" selection-start-line="11" selection-start-column="18" selection-end-line="11" selection-end-column="18" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/tomster/mybatis/po/User.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="3" column="22" lean-forward="true" selection-start-line="3" selection-start-column="22" selection-end-line="3" selection-end-column="22" />
+        <state relative-caret-position="60">
+          <caret line="3" column="22" lean-forward="false" selection-start-line="3" selection-start-column="22" selection-end-line="3" selection-end-column="22" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#337#338#0" expanded="true" />
@@ -956,35 +1065,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/tomster/mybatis/mapper/UserMapper.java">
+    <entry file="jar://$PROJECT_DIR$/lib/mybatis-3.2.7.jar!/org/apache/ibatis/session/SqlSession.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="215">
-          <caret line="10" column="3" lean-forward="true" selection-start-line="10" selection-start-column="3" selection-end-line="10" selection-end-column="3" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/tomster/mybatis/sqlmap/UserMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="37" column="0" lean-forward="true" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
-          <folding>
-            <marker date="1574179820801" expanded="true" signature="326:361" ph="SELECT * FRO... user" />
-            <marker date="1574179820801" expanded="true" signature="458:564" ph="INSERT INTO USER... " />
-            <marker date="1574179820801" expanded="true" signature="677:702" ph="SELECT COUNT... user" />
-            <marker date="1574179820801" expanded="true" signature="677:755" ph="SELECT COUNT... user" />
-            <marker date="1574179820801" expanded="true" signature="892:910" ph="SELECT * FRO... USER" />
-            <marker date="1574179820801" expanded="true" signature="1217:1235" ph="SELECT * FRO... USER" />
-          </folding>
+        <state relative-caret-position="281">
+          <caret line="38" column="8" lean-forward="false" selection-start-line="38" selection-start-column="8" selection-end-line="38" selection-end-column="8" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/tomster/mybatis/test/MyTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="45" column="0" lean-forward="true" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
+        <state relative-caret-position="875">
+          <caret line="50" column="30" lean-forward="true" selection-start-line="50" selection-start-column="30" selection-end-line="50" selection-end-column="30" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -993,8 +1085,57 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/tomster/mybatis/test/MapperTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="365">
-          <caret line="45" column="44" lean-forward="true" selection-start-line="44" selection-start-column="8" selection-end-line="45" selection-end-column="44" />
+        <state relative-caret-position="303">
+          <caret line="58" column="0" lean-forward="true" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/tomster/mybatis/test/ResultMapTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="291">
+          <caret line="47" column="5" lean-forward="true" selection-start-line="47" selection-start-column="5" selection-end-line="47" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/tomster/mybatis/test/ParamTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="41" column="9" lean-forward="true" selection-start-line="41" selection-start-column="9" selection-end-line="41" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/tomster/mybatis/sqlmap/UserMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="303">
+          <caret line="67" column="9" lean-forward="true" selection-start-line="67" selection-start-column="9" selection-end-line="67" selection-end-column="9" />
+          <folding>
+            <marker date="1574602969927" expanded="true" signature="326:361" ph="SELECT * FRO... user" />
+            <marker date="1574602969927" expanded="true" signature="478:561" ph="SELECT * FRO... user" />
+            <marker date="1574602969927" expanded="true" signature="660:792" ph="SELECT * FRO... user" />
+            <marker date="1574602969927" expanded="true" signature="888:971" ph="SELECT * FRO... user" />
+            <marker date="1574602969927" expanded="true" signature="1068:1174" ph="INSERT INTO USER... " />
+            <marker date="1574602969927" expanded="true" signature="1287:1312" ph="SELECT COUNT... user" />
+            <marker date="1574602969927" expanded="true" signature="1287:1365" ph="SELECT COUNT... user" />
+            <marker date="1574602969927" expanded="true" signature="1502:1520" ph="SELECT * FRO... USER" />
+            <marker date="1574602969927" expanded="true" signature="1827:1845" ph="SELECT * FRO... USER" />
+            <marker date="1574602969927" expanded="true" signature="2617:2652" ph="SELECT * FRO... user" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/tomster/mybatis/mapper/UserMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="303">
+          <caret line="36" column="0" lean-forward="true" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

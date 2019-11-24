@@ -178,30 +178,100 @@ User user = mapper.findUserById(10);
 ```
 使用mapper接口编程不仅可以提高可读性，体现业务逻辑，还在编译器检查参数类型等等。
 
-## 基本配置
-typeAliases: 别名，代替全限定名，默认为类首字母小写；  
-environment: 描述数据库，transactionManager配置事务管理器，dataSource配置数据库  
-mapper: 引入的引射器   
-### 1.properties
-
-### 2.settings
-
-### 3.typeAliases
-
-### 4.environments
+## 配置
 
 
-## 设置
+## 映射  
 
-### 别名  
+### 1.参数传递的方式
+参数传递有三种方式：使用map类型；使用@param注解；JAVA BEAN。
+xml映射文件
 ```xml
-<typeAliases>
-    <package name="com.tomster.mybatis.vo"></package>
-    <package name="com.tomster.mybatis.po"></package>
-</typeAliases>
-``` 
+<!--1.使用map类型-->
+<select id="findUserByMap" parameterType="map" resultType="com.tomster.mybatis.po.User">
+    SELECT * FROM user WHERE sex = #{sex} AND username like concat('%',#{username},'%')
+</select>
+<!--2.使用注解传递多个参数-->
+<select id="findUserByParam" resultType="com.tomster.mybatis.po.User">
+    SELECT * FROM user
+    WHERE sex = #{sex}
+    AND username like concat('%',#{username},'%')
+    AND address = #{address}
+</select>
+<!--3.通过Java Bean传递多个参数-->
+<select id="countUser" parameterType="com.tomster.mybatis.po.User" resultType="int">
+    SELECT COUNT(*) FROM user WHERE username like '%${username}%' and sex = #{sex};
+</select>
+```
+mapper接口
+```java
+public List<User> findUserByMap(Map<String, Object> parameterMap);
+public List<User> findUserByParam(@Param("username") String username,
+                                  @Param("sex") String sex,
+                                  @Param("address") String address);
+public int countUser(User user);
+```
+sqlSsseion调用mapper接口
+```java
+//map
+Map<String, Object> map = new HashMap<>();
+map.put("sex", 1);
+map.put("username", "张");
+List<User> userList = mapper.findUserByMap(map);
+//注解
+List<User> userByParam = mapper.findUserByParam("wmh", "1", "江苏扬州");
+//pojo
+User user = new User();
+user.setUsername("小");
+user.setSex("1");
+int count = mapper.countUser(user);
+```
 
-### 动态sql
+
+### 2.结果集映射 
+resultType支持基本数据类型,map，pojo等
+
+#### 2.1使用map存储结果集
+映射文件
+```xml
+<select id="findMapUserByMap" parameterType="map" resultType="map">
+    SELECT * FROM user WHERE sex = #{sex} AND username like concat('%',#{username},'%')
+</select>
+```
+mapper接口
+```java
+public List<Map<String, Object>> findMapUserByMap(Map<String, Object> parameterMap);
+```
+
+#### 2.2使用pojo存储结果集 
+映射文件
+```xml
+<!--定义resultMap-->
+<resultMap id="userResultMap" type="com.tomster.mybatis.po.User">
+    <id property="id" column="id"></id>
+    <result property="username" column="username"></result>
+    <result property="birthday" column="birthday"></result>
+    <result property="sex" column="sex"></result>
+    <result property="address" column="address"></result>
+</resultMap>
+<!--使用resultMap作为输出类型-->
+<select id="findUserResultMap" parameterType="int" resultMap="userResultMap">
+    SELECT * FROM user WHERE id = #{id}
+</select>
+```
+mapper接口
+```
+public User findUserResultMap(int id);
+```
+resultType指定pojo类型时只映射名称与属性相同的列名，可以通过resultMap来进行pojo属性与表列名的关系对应。
+
+
+### 3.级联
+
+
+## 动态sql
+
+### if
 ```xml
 <select id="userList" parameterType="com.tomster.mybatis.po.User" resultType="com.tomster.mybatis.po.User">
     SELECT * FROM USER
@@ -212,9 +282,7 @@ mapper: 引入的引射器
 </select>
 ```
 
-
 ### foreach  
-
 ```xml
 <select id="userListByIds" parameterType="com.tomster.mybatis.vo.QueryVo" resultType="com.tomster.mybatis.po.User">
     SELECT * FROM USER
@@ -227,5 +295,8 @@ mapper: 引入的引射器
 
     </where>
 </select>
-``
+```
+others
+```xml
 
+```
