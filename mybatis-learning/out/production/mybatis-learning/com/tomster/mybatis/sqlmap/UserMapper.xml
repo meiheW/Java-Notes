@@ -36,8 +36,9 @@
 
     <select id="userList" parameterType="com.tomster.mybatis.po.User" resultType="com.tomster.mybatis.po.User">
         SELECT * FROM USER
+        <bind name="UserPattern" value="'%'+username+'%'"></bind>
         <where>
-            <if test="username!=null">and username like '%${username}%'</if>
+            <if test="username!=null">and username like #{UserPattern}</if>
             <if test="sex!=null">and sex=#{sex}</if>
         </where>
     </select>

@@ -267,11 +267,65 @@ resultType指定pojo类型时只映射名称与属性相同的列名，可以通
 
 
 ### 3.级联
+pojo
+```java
+package com.tomster.mybatis.po;
 
+import java.util.Date;
+
+/**
+ * @author meihewang
+ * @date 2019/11/25  23:31
+ */
+public class Order {
+    private int id;
+    private String number;
+    private String userId;
+    private Date createtime;
+    private String note;
+    //getter and setter
+}
+```
+
+```java
+package com.tomster.mybatis.po;
+
+/**
+ * @author meihewang
+ * @date 2019/11/25  23:33
+ */
+public class OrderExt extends Order{
+
+    private String username;
+    private String address;
+}
+```
+
+映射文件
+```xml
+<select id="findOrderById" parameterType="int" resultType="orderExt">
+    SELECT o.*,u.username,u.address from orders o
+    left JOIN `user` u  ON u.id=o.user_id
+    where o.id=#{id};
+</select>
+```
+mapper接口
+```java
+public OrderExt findOrderById(@Param("id") int id);
+```
 
 ## 动态sql
 
-### if
+### if - 判断语句，与test属性联合使用
+```xml
+<select id="userList" parameterType="com.tomster.mybatis.po.User" resultType="com.tomster.mybatis.po.User">
+    SELECT * FROM USER where 1=1
+    <if test="username!=null">and username like '%${username}%'</if>
+    <if test="sex!=null">and sex=#{sex}</if>
+</select>
+```
+
+### where - 方便组装查询条件
 ```xml
 <select id="userList" parameterType="com.tomster.mybatis.po.User" resultType="com.tomster.mybatis.po.User">
     SELECT * FROM USER
@@ -282,7 +336,7 @@ resultType指定pojo类型时只映射名称与属性相同的列名，可以通
 </select>
 ```
 
-### foreach  
+### foreach - 遍历集合，用于SQL的in关键字
 ```xml
 <select id="userListByIds" parameterType="com.tomster.mybatis.vo.QueryVo" resultType="com.tomster.mybatis.po.User">
     SELECT * FROM USER
@@ -292,11 +346,23 @@ resultType指定pojo类型时只映射名称与属性相同的列名，可以通
                 ${id}
             </foreach>
         </if>
-
     </where>
+
+    <!--与上面的查询相同，缺少了判断条件-->
+    <!--SELECT * FROM USER where id in
+    <foreach collection="ids" item="id" open="(" close=")" separator=",">
+        ${id}
+    </foreach>-->
 </select>
 ```
-others
+### bind - 动态sql不必使用数据库语言（concat-||）
 ```xml
-
+<select id="userList" parameterType="com.tomster.mybatis.po.User" resultType="com.tomster.mybatis.po.User">
+    SELECT * FROM USER
+    <bind name="UserPattern" value="'%'+username+'%'"></bind>
+    <where>
+        <if test="username!=null">and username like #{UserPattern}</if>
+        <if test="sex!=null">and sex=#{sex}</if>
+    </where>
+</select>
 ```
