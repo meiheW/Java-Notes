@@ -6,6 +6,10 @@
 
     <properties resource="db.properties"/>
 
+    <settings>
+        <setting name="mapUnderscoreToCamelCase" value="true"/>
+    </settings>
+
     <typeAliases>
         <package name="com.tomster.mybatis.vo"></package>
         <package name="com.tomster.mybatis.po"></package>
@@ -31,6 +35,7 @@
     <mappers>
         <!--指定xml映射文件-->
         <mapper resource="com/tomster/mybatis/sqlmap/UserMapper.xml"></mapper>
+        <mapper resource="com/tomster/mybatis/sqlmap/OrderMapper.xml"></mapper>
 <!--        &lt;!&ndash;指定mapper类文件，须与映射文件位于同一包内&ndash;&gt;
         <mapper class="com.tomster.mybatis.mapper.UserMapper"/>
         &lt;!&ndash;指定包，mapper与映射文件位于同一包内&ndash;&gt;

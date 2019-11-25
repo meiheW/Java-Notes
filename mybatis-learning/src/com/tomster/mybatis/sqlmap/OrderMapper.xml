@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.tomster.mybatis.mapper.OrderMapper">
+
+    <select id="findOrderById" parameterType="int" resultType="orderExt">
+        SELECT o.*,u.username,u.address from orders o
+        left JOIN `user` u  ON u.id=o.user_id
+        where o.id=#{id};
+    </select>
+
+
+</mapper>
