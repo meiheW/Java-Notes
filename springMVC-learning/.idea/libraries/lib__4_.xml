@@ -1,0 +1,24 @@
+<component name="libraryTable">
+  <library name="lib (4)">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/web/WEN-INF/lib/com.springsource.org.aopalliance-1.0.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/web/WEN-INF/lib/com.springsource.org.apache.commons.logging-1.1.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/web/WEN-INF/lib/com.springsource.org.aspectj.weaver-1.6.8.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/web/WEN-INF/lib/log4j-1.2.16.jar!/" />
+      <root url="jar://$PROJECT_DIR$/web/WEN-INF/lib/spring-aop-3.2.0.RC2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/web/WEN-INF/lib/spring-aspects-3.2.0.RC2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/web/WEN-INF/lib/spring-beans-3.2.0.RC2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/web/WEN-INF/lib/spring-context-3.2.0.RC2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/web/WEN-INF/lib/spring-core-3.2.0.RC2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/web/WEN-INF/lib/spring-expression-3.2.0.RC2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/web/WEN-INF/lib/spring-jdbc-3.2.0.RC2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/web/WEN-INF/lib/spring-orm-3.2.0.RC2-sources.jar!/" />
+      <root url="jar://$PROJECT_DIR$/web/WEN-INF/lib/spring-test-3.2.0.RC2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/web/WEN-INF/lib/spring-tx-3.2.0.RC2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/web/WEN-INF/lib/spring-web-3.2.0.RC2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/web/WEN-INF/lib/spring-webmvc-3.2.0.RC2.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
