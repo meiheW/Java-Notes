@@ -6,7 +6,7 @@
 <mapper namespace="com.tomster.backoffice.mapper.UserMapper">
 
 
-    <select id="findUserById" parameterType="int" resultType="com.tomster.backoffice.po.User">
+    <select id="findUserById" parameterType="int" resultType="user">
         SELECT * FROM user WHERE id = #{id}
     </select>
 

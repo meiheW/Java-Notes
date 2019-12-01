@@ -366,3 +366,74 @@ public OrderExt findOrderById(@Param("id") int id);
     </where>
 </select>
 ```
+
+## Mybatis与Spring的整合
+mybatis的配置文件sqlMapConfig.xml需要配置数据源以及映射文件的路径，与spring整合将数据源的配置放到applicationContext.xml里面，由spring来设置数据源、会话工厂和mapper。需要spring包mybatis包以及mybatis-spring包。
+
+applicationContext.xml  
+```xml
+<!-- 1.配置数据库，dbcp数据库连接池-->
+<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
+    <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
+    <property name="url" value="jdbc:mysql://localhost:3306/mybatis?useUnicode=true&amp;characterEncoding=utf8"/>
+    <property name="username" value="root"/>
+    <property name="password" value="123456"/>
+
+    <!-- 最大连接  -->
+    <property name="maxActive" value="10"/>
+    <!--最大空闲数  -->
+    <property name="maxIdle" value="5"/>
+</bean>
+
+<!-- 2.配置会话工厂-->
+<bean id="sessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+    <property name="dataSource" ref="dataSource"/>
+    <property name="configLocation" value="classpath:SqlMapConfig.xml"/>
+</bean>
+
+
+<!-- ===============配置dao的几种方式=================-->
+<!--由spring创建一个userMapper对象,使用工厂来创建-->
+<bean id="userMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">
+<property name="sqlSessionFactory" ref="sessionFactory"/>
+<property name="mapperInterface" value="com.tomster.backoffice.mapper.UserMapper"/>
+</bean>
+```
+
+sqlmapConfig.xml
+```xml
+<!--配置别名-->
+<typeAliases>
+    <package name="com.tomster.backoffice.po"></package>
+</typeAliases>
+
+<!--加载映射文件-->
+<mappers>
+    <mapper resource="com/tomster/backoffice/sqlmap/UserMapper.xml"></mapper>
+</mappers>
+```
+
+调用方法
+```java
+//1.加载spring的配置文件
+ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
+//2.获取userMapper
+UserMapper userMapper = (UserMapper) context.getBean("userMapper");
+//3.调用dao方法
+User user = userMapper.findUserById(1);
+```
+整合后由spring来创建mapper的实例，以前是通过mybatis的sqlSession来获取mapper的，现在是在applicationContext.xml通过配置由工厂来创建的。不过每一个mapper都需要配置工厂来生成，可以使用指定包扫描来创建。
+```xml
+<!--由spring创建一个userMapper对象,使用工厂来创建-->
+<bean id="userMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">
+<property name="sqlSessionFactory" ref="sessionFactory"/>
+<property name="mapperInterface" value="com.tomster.backoffice.mapper.UserMapper"/>
+</bean>
+<!-- 批量创建mapper的bean对象
+    内部会扫描指定包下的mapper,创建代理对象,名字就是类名，头字母改小写
+-->
+<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+    <property name="basePackage" value="com.tomster.backoffice.mapper"/>
+    <property name="sqlSessionFactoryBeanName" value="sessionFactory"/>
+</bean>
+```
