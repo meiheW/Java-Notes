@@ -159,4 +159,5 @@ public Response<Object> add(@RequestBody @Valid NewBookDto newBookDto, BindingRe
 }
 ```  
 
-比较复杂的业务逻辑校验可以通过Spring提供的Validator接口来实现。验证器Validator通过supports方法判定是否启用验证器去验证数据；validate方法去检验数据的合法性。手写验证器实现Validator接口，用@InitBind将验证器和控制器捆粄在一起，对数据进行验证。
+比较复杂的业务逻辑校验可以通过Spring提供的Validator接口来实现。验证器Validator通过supports方法判定是否启用验证器去验证数据；validate方法去检验数据的合法性。手写验证器实现Validator接口，用@InitBind将验证器和控制器捆粄在一起，对数据进行验证。  
+
