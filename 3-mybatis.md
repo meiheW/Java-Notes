@@ -49,6 +49,7 @@ public class User implements Serializable{
     private Date birthday;
     private String address;
     /*getter and setter*/
+}
 ```
 #### 4.1 xml实现映射 
 mapper接口
@@ -372,13 +373,14 @@ mybatis的配置文件sqlMapConfig.xml需要配置数据源以及映射文件的
 
 applicationContext.xml  
 ```xml
+
+
 <!-- 1.配置数据库，dbcp数据库连接池-->
 <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
     <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
     <property name="url" value="jdbc:mysql://localhost:3306/mybatis?useUnicode=true&amp;characterEncoding=utf8"/>
     <property name="username" value="root"/>
     <property name="password" value="123456"/>
-
     <!-- 最大连接  -->
     <property name="maxActive" value="10"/>
     <!--最大空闲数  -->
@@ -391,13 +393,14 @@ applicationContext.xml
     <property name="configLocation" value="classpath:SqlMapConfig.xml"/>
 </bean>
 
-
 <!-- ===============配置dao的几种方式=================-->
 <!--由spring创建一个userMapper对象,使用工厂来创建-->
 <bean id="userMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">
 <property name="sqlSessionFactory" ref="sessionFactory"/>
 <property name="mapperInterface" value="com.tomster.backoffice.mapper.UserMapper"/>
 </bean>
+
+
 ```
 
 sqlmapConfig.xml

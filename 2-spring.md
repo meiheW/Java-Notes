@@ -30,7 +30,7 @@
 
 * spring-context-xxx.jar：在基础IoC功能上的扩展服务，此外还提供许多企业级服务的支持,如邮件服务、任务调度、JNDI定位、EJB集成、远程访问、缓存以及各种视图层框架的封装等； 
 
-* spring-expression-xxx.jar：spring表达式语言；  
+* spring-expression-xxx.jar：spring表达式语言。
 
 
 ## IoC  
@@ -73,7 +73,8 @@ XML配置文件
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="
-http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+        http://www.springframework.org/schema/beans 
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
 
 
     <!-- 配置一个bean对象-->
@@ -644,11 +645,13 @@ public class MyAspect {
 
 xml配置文件
 ```xml
+
 <!-- 配置扫描注解的位置 -->
 <context:component-scan base-package="com.tomster.aspectj"/>
 
 <!-- 配置aop注解生效-->
 <aop:aspectj-autoproxy></aop:aspectj-autoproxy>
+
 ```
 测试代码及输出
 ```java
@@ -853,7 +856,6 @@ public class AccountService {
 
     //@Autowired
     private AccountDao accountDao;
-
     private TransactionTemplate transactionTemplate;
     
     public void transfer(String outer, String inner, int num){
@@ -863,7 +865,6 @@ public class AccountService {
             protected void doInTransactionWithoutResult(TransactionStatus transactionStatus) {
                 //step 1
                 accountDao.out(outer, num);
-
                 int i = 1/0;
                 //step 2
                 accountDao.in(inner, num);

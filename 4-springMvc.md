@@ -1,7 +1,6 @@
 # Spring MVC基础  
 
 ## 初始化和流程  
-
 ### 1.概念  
 &emsp;&emsp;Spring MVC是Spring提供给Web应用的框架设计.Spring MVC的流程和各个组件的应用是其根本。MVC设计不仅限于Java Web应用，还包括前端、PHP等语言，根本原因在于解耦各个模块。使用MVC后一个根本的好处在于前台和后台得到了一定的分离，但仍然有一定的耦合。对于后端而言，由于控制器和模型层的分离，使得大量的代码可以得到重用。 
 
@@ -17,7 +16,7 @@ dispatcher-servlet.xml
 <!-- 1.配置url处理映射-->
 <bean class="org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping"/>
 <!-- 2.配置控制器处理适配器-->
-<bean class="org.springframework.web.servlet.mvc.SimpleControllerHandlerAdapter"></bean>
+<bean class="org.springframework.web.servlet.mvc.SimpleControllerHandlerAdapter"/>
 <!-- 3.配置控制器-相当于配置了访问路径-->
 <bean name="/user.do" class="com.tomster.backoffice.web.controller.UserController"/>
 <!-- 4.配置资源视图解析器-->
@@ -76,7 +75,7 @@ public class RroleManagerController {
 ### 2.1 接收普通请求参数  
 ```java
 public ModelAndView commonParams(String roleName, String note){
-    //表单数据传递参数名称一致，不需要人和注解也可以获取参数
+    //表单数据传递参数名称一致，不需要注解也可以获取参数
 }
 ```  
 
@@ -111,14 +110,14 @@ public ModelAndView findRoles(@ResponseBody RolesParams rolesParams){
 
 ## 4.拦截器  
 ### 4.1 定义
-拦截器可以在控制器之前货之后做一些操作   
+拦截器可以在控制器之前或之后做一些操作   
 Spring要求所有的拦截器都要事先HandlerInterceptor接口，该接口有三个方法：
 preHandle：在控制器之前执行的前置方法；  
 postHandle：在控制器之后执行的后置方法； 
 afterCompletion：无论是否产生异常都会在渲染视图后执行的方法。    
 
 ### 4.2 执行流程  
-前置方法(preHandle)-> 控制器(Handler) -> 后置方法(pstHandle) -> 完成方法(afterCompletion)
+前置方法(preHandle)-> 控制器(Handler) -> 后置方法(postHandle) -> 完成方法(afterCompletion)
 <div align="center">
 	<img src="img/interceptor.jpg" width="66%">
 </div>
