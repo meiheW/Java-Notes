@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import javax.sql.DataSource;
+
 
 /**
  * @author meihewang
@@ -20,6 +22,9 @@ public class HelloController {
 
     @Autowired
     private UserService userService;
+
+    @Autowired
+    private DataSource dataSource;
 
     @GetMapping("/hello")
     public String hello(){
