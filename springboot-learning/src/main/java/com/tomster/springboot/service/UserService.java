@@ -19,15 +19,7 @@ public class UserService {
     private UserMapper userMapper;
 
     public User queryById(Integer id){
-        return this.userMapper.selectByPrimaryKey(id);
+        return this.userMapper.queryUserById(id);
     }
 
-    @Transactional
-    public void deleteById(Integer id){
-        this.userMapper.deleteByPrimaryKey(id);
-    }
-
-    public List<User> queryAll() {
-        return this.userMapper.selectAll();
-    }
 }

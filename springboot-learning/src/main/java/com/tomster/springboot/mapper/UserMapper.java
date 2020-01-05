@@ -7,5 +7,7 @@ import tk.mybatis.mapper.common.Mapper;
  * @author meihewang
  * @date 2019/12/22  23:27
  */
-public interface UserMapper extends Mapper<User> {
+public interface UserMapper {
+
+    User queryUserById(int id);
 }

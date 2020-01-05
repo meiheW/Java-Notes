@@ -1,19 +1,11 @@
 package com.tomster.springboot.pojo;
 
-import javax.persistence.*;
-import java.io.Serializable;
-
 /**
  * @author meihewang
  * @date 2019/12/22  23:28
  */
-@Table(name = "tb_user")
-public class User implements Serializable {
 
-    private static final long serialVersionUID = 1L;
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+public class User {
     private Integer id;
 
     // 用户名
