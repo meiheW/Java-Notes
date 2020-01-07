@@ -7,6 +7,6 @@ spring:
 #mybatis
 mybatis:
   configuration:
-    map-underscore-to-camel-case: true
+    map-underscore-to-camel-case: false
   type-aliases-package: cn.tomster.springboot.pojo
   mapper-locations: classpath:/mapper/*.xml
