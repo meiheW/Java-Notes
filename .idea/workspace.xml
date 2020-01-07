@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="39a8b21d-a836-4e29-9d7f-8b7a67a11095" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/springcloud-learning/.idea/workspace.xml" afterPath="$PROJECT_DIR$/springcloud-learning/.idea/workspace.xml" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -339,7 +338,7 @@
       <workItem from="1576338923892" duration="1341000" />
       <workItem from="1576402512302" duration="1196000" />
       <workItem from="1578234890545" duration="408000" />
-      <workItem from="1578411593006" duration="915000" />
+      <workItem from="1578411593006" duration="938000" />
     </task>
     <task id="LOCAL-00001" summary="springboot.md">
       <created>1576336441171</created>
@@ -369,11 +368,18 @@
       <option name="project" value="LOCAL" />
       <updated>1578414199262</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="eureka-server">
+      <created>1578414224415</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1578414224415</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="4418000" />
+    <option name="totallyTimeSpent" value="4441000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="2391" y="-9" width="2418" height="1318" extended-state="6" />
