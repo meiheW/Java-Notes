@@ -3,6 +3,8 @@ server:
   port: 8081
 #jdbc
 spring:
+  application:
+    name: user-service
   datasource:
     url: jdbc:mysql://localhost:3306/spring
     username: root
@@ -13,3 +15,8 @@ mybatis:
       map-underscore-to-camel-case: true
   type-aliases-package: cn.tomster.springcloud.user.po
   mapper-locations: classpath:/xmlmapper/*.xml
+#eureka
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:8082/eureka

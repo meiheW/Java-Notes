@@ -1,0 +1,12 @@
+#server
+server:
+  port: 8083
+#jdbc
+spring:
+  application:
+    name: consumer-service
+#eureka
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:8082/eureka
