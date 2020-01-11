@@ -191,8 +191,8 @@
     <option name="jreName" value="1.8" />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-9" />
-    <option name="y" value="-9" />
+    <option name="x" value="-23" />
+    <option name="y" value="37" />
     <option name="width" value="1938" />
     <option name="height" value="1048" />
   </component>
@@ -580,12 +580,12 @@
       <workItem from="1578206644635" duration="7070000" />
       <workItem from="1578324247405" duration="2033000" />
       <workItem from="1578409996198" duration="4381000" />
-      <workItem from="1578757072820" duration="1169000" />
+      <workItem from="1578757072820" duration="1200000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="14653000" />
+    <option name="totallyTimeSpent" value="14684000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
