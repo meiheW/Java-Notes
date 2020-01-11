@@ -1,7 +1,11 @@
 package com.tomster.controller;
 
+import com.netflix.hystrix.contrib.javanica.annotation.DefaultProperties;
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixProperty;
 import com.tomster.po.User;
-import lombok.val;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.client.ServiceInstance;
 import org.springframework.cloud.client.discovery.DiscoveryClient;
@@ -10,7 +14,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
-import java.net.URI;
 import java.util.List;
 
 /**
@@ -19,7 +22,10 @@ import java.util.List;
  */
 @RestController
 @RequestMapping("/user/consumer")
+//@DefaultProperties(defaultFallback = "defaultFallback")
 public class ConsumerController {
+
+    private Logger logger = LoggerFactory.getLogger(ConsumerController.class);
 
     @Autowired
     private RestTemplate restTemplate;
@@ -37,10 +43,41 @@ public class ConsumerController {
      * @return
      */
     @RequestMapping("/getUser/{id}")
-    public User getUser(@PathVariable("id") Long id){
+    @HystrixCommand(fallbackMethod = "queryUserByIdFallback", commandProperties = {
+            @HystrixProperty(name = "execution.isolation.thread.timeoutInMilliseconds", value="800")
+    })
+    public User getUser(@PathVariable("id") int id){
         List<ServiceInstance> instances = discoveryClient.getInstances("user-service");
         ServiceInstance instance = instances.get(0);
-        return restTemplate.getForObject("http://"+instance.getHost()+":"+instance.getPort()+"/springcloud/getUser/" + id, User.class);
+        long begin = System.currentTimeMillis();
+        User user = restTemplate.getForObject("http://" + instance.getHost() + ":" + instance.getPort() + "/springcloud/getUser/" + id, User.class);
+        long end = System.currentTimeMillis();
+        logger.info("访问用时：{}", end - begin);
+        return user;
     }
 
+    /**
+     * fallback
+     * 默认超时时间1000ms
+     * @param id
+     * @return
+     */
+    public User queryUserByIdFallback(int id){
+        User user = new User();
+        user.setId(id);
+        user.setName("用户信息查询出现异常！");
+        return user;
+    }
+
+    /**
+     * defaultFallback
+     * @param id
+     * @return
+     */
+    public User defaultFallback(int id){
+        User user = new User();
+        user.setId(id);
+        user.setName("用户信息查询出现异常！");
+        return user;
+    }
 }

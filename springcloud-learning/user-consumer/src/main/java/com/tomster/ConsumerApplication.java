@@ -2,6 +2,8 @@ package com.tomster;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.client.SpringCloudApplication;
+import org.springframework.cloud.client.circuitbreaker.EnableCircuitBreaker;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.context.annotation.Bean;
 import org.springframework.web.client.RestTemplate;
@@ -10,8 +12,11 @@ import org.springframework.web.client.RestTemplate;
  * @author meihewang
  * @date 2020/01/05  21:51
  */
+/*@EnableCircuitBreaker
 @EnableDiscoveryClient
-@SpringBootApplication
+@SpringBootApplication*/
+
+@SpringCloudApplication
 public class ConsumerApplication {
 
     @Bean

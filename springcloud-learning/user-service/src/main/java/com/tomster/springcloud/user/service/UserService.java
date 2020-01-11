@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+import java.util.Random;
 
 /**
  * @author meihewang
@@ -17,7 +18,8 @@ public class UserService {
     @Autowired
     private UserMapper userMapper;
 
-    public User queryById(Integer id){
+    public User queryById(Integer id) throws InterruptedException {
+        Thread.sleep(new Random().nextInt(2000));
         return this.userMapper.selectByPrimaryKey(id);
     }
 
