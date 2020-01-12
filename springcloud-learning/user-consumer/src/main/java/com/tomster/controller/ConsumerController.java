@@ -1,8 +1,10 @@
 package com.tomster.controller;
 
+import com.fasterxml.jackson.databind.annotation.JsonAppend;
 import com.netflix.hystrix.contrib.javanica.annotation.DefaultProperties;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixProperty;
+import com.tomster.client.UserClient;
 import com.tomster.po.User;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -31,8 +33,10 @@ public class ConsumerController {
     private RestTemplate restTemplate;
     @Autowired
     private DiscoveryClient discoveryClient;
+    @Autowired
+    private UserClient userClient;
 
-    @RequestMapping()
+    @RequestMapping("/default")
     public User getUser() {
         return restTemplate.getForObject("http://localhost:8081/springcloud/getUser/" + 1, User.class);
     }
@@ -79,5 +83,15 @@ public class ConsumerController {
         user.setId(id);
         user.setName("用户信息查询出现异常！");
         return user;
+    }
+
+
+    /**
+     * 测试feign
+     * @return
+     */
+    @RequestMapping("/feign")
+    public User getUserByClient() {
+        return userClient.getUser(1);
     }
 }

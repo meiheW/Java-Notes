@@ -19,6 +19,7 @@ public class UserService {
     private UserMapper userMapper;
 
     public User queryById(Integer id) throws InterruptedException {
+        // to test hystrix fallback.
         Thread.sleep(new Random().nextInt(2000));
         return this.userMapper.selectByPrimaryKey(id);
     }
