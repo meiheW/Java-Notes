@@ -11,6 +11,7 @@
         <module>user-service</module>
         <module>user-consumer</module>
         <module>eureka-server</module>
+        <module>gateway</module>
     </modules>
     <packaging>pom</packaging>
 
