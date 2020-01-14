@@ -2,6 +2,7 @@
   <dictionary name="Administrator">
     <words>
       <w>finchley</w>
+      <w>hystrix</w>
       <w>lombok</w>
       <w>springcloud</w>
     </words>

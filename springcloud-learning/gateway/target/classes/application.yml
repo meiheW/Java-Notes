@@ -1,0 +1,22 @@
+server:
+  port: 10010
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:8082/eureka
+    fetch-registry: true
+zuul:
+  routes:
+    user-service: /user-service/**
+  ignored-services:
+    - consumer-service
+  strip-prefix: true
+  prefix: /api
+spring:
+  application:
+    name: gateway
+
+ribbon:
+  eureka:
+    enable: true
+
