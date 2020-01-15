@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script src="./node_modules/vue/dist/vue.js"></script>
+<body>
+<div id="app">
+    <input type="text" v-model="num">
+    <button v-on:click="num++">点我1</button>
+    <button v-on:click="add">点我2</button>
+    <button v-on:click="namec">点我3</button>
+    <h2>
+        {{name}} 非常帅
+        {{num}}只老虎
+    </h2>
+</div>
+
+<script type="text/javascript">
+    // 生成一个Vue实例
+    var app = new Vue({
+        el:"#app", // el,即element。要渲染的的页面元素
+        data:{ // 数据
+            name:"虎哥",
+            num: 1
+        },
+        created(){
+            this.name = "kst";
+        },
+        methods:{
+            add:function(){
+                // this代表的当前vue实例
+                this.num+=2;
+            },
+            namec:function(){
+                // this代表的当前vue实例
+                this.name="虎哥";
+            }
+        },
+
+    })
+</script>
+</body>
+</html>
