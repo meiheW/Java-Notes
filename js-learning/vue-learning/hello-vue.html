@@ -7,14 +7,57 @@
 <script src="./node_modules/vue/dist/vue.js"></script>
 <body>
 <div id="app">
+    <!-- v-on -->
+    <button v-on:click="num--">-</button>
     <input type="text" v-model="num">
-    <button v-on:click="num++">点我1</button>
-    <button v-on:click="add">点我2</button>
+    <button v-on:dblclick="add">+</button><br><hr>
     <button v-on:click="namec">点我3</button>
     <h2>
-        {{name}} 非常帅
-        {{num}}只老虎
+        <span v-text="name"></span> 非常帅
+        <span v-text="num"></span>只老虎
     </h2>
+
+    <!-- v-text / v-html -->
+    <span v-text="title"></span><br>
+    <span v-html="title"></span>
+
+    <hr>
+
+    <!-- v-model -->
+    <h1>请选择</h1>
+    <input type="checkbox" v-model="lessons" value="java">java <br>
+    <input type="checkbox" v-model="lessons" value="c++">c++ <br>
+    <input type="checkbox" v-model="lessons" value="python">c++ <br>
+
+    <h1>已经选择</h1>
+    <h1>
+        已购买：{{lessons.join(",")}}
+    </h1>
+
+    <!-- v-on -->
+    <div style="width: 100px; height: 100px; background-color:coral;"
+         v-on:click.stop="print('div')">
+        <button v-on:click.stop="print('button')">button</button>
+    </div>
+
+    <!-- v-for -->
+    <ul>
+        <li v-for="(u,i) in users">
+            {{i}} {{u.name+','+u.gender+','+u.age}}
+        </li>
+    </ul>
+
+    <ul>
+        <li v-for="(v,k,i) in users[0]">
+            {{i + '_' + k + ":" + v}}
+        </li>
+    </ul>
+
+    <!-- v-if -->
+    <button @click="show=!show">button</button>
+    <h1 v-if="show">
+        hello
+    </h1>
 </div>
 
 <script type="text/javascript">
@@ -23,7 +66,14 @@
         el:"#app", // el,即element。要渲染的的页面元素
         data:{ // 数据
             name:"虎哥",
-            num: 1
+            num: 1,
+            title:"<a href='https://www.baidu.com'>hello</a>",
+            lessons: [],
+            users: [
+                {name: 'zs', gender: 'male', age: 20},
+                {name: 'ls', gender: 'female', age: 21},
+            ],
+            show: true,
         },
         created(){
             this.name = "kst";
@@ -31,11 +81,14 @@
         methods:{
             add:function(){
                 // this代表的当前vue实例
-                this.num+=2;
+                this.num+=1;
             },
             namec:function(){
                 // this代表的当前vue实例
                 this.name="虎哥";
+            },
+            print(msg) {
+                console.log(msg)
             }
         },
 
