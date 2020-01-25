@@ -3,8 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <style type="text/css">
+        div #box {
+            width: 100px;
+            height: 100px;
+            color: darkslategray;
+        }
+        .red{
+            background-color: red;
+        }
+        .blue{
+            background-color: blue;
+        }
+
+    </style>
 </head>
-<script src="./node_modules/vue/dist/vue.js"></script>
 <body>
 <div id="app">
     <!-- v-on -->
@@ -58,6 +71,7 @@
     <h1 v-if="show">
         hello
     </h1>
+
 </div>
 
 <script type="text/javascript">
@@ -74,6 +88,7 @@
                 {name: 'ls', gender: 'female', age: 21},
             ],
             show: true,
+
         },
         created(){
             this.name = "kst";

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        div #box {
+            width: 100px;
+            height: 100px;
+            color: darkslategray;
+        }
+        .red{
+            background-color: red;
+        }
+        .blue{
+            background-color: blue;
+        }
+
+    </style>
+</head>
+<script src="./node_modules/vue/dist/vue.js"></script>
+<body>
+<div id="app">
+    <button @click = "color='red'">红色</button>
+    <button @click = "color='blue'">蓝色</button>
+    <div id="box" v-bind:class="color">
+        me, a box
+    </div>
+
+
+
+
+    <input type="text" v-model="num">
+    <h1>num: {{num}}</h1>
+    <input type="text" v-model="person.age">
+    <h1>age:{{person.age}}</h1>
+
+    <h1>{{birth}}</h1>
+</div>
+<script>
+    const app = new Vue({
+        el: "#app",
+        data: {
+            color: "red",
+            num: 1,
+            birthday: "2018-02-15 20:30:00",
+            person:{
+                name:"jack",
+                age:21
+            }
+        },
+        computed: {
+            birth(){
+               const day = new Date(this.birthday);
+                return day.getFullYear()+"年"+day.getMonth()+"月"+day.getDay()+"日";
+            }
+        },
+        watch: {
+            num(val, oldVal){
+                console.log(val, oldVal);
+            },
+            person:{
+                deep: true,
+                handler(val){
+                    console.log(val.age)
+                }
+            }
+        }
+    })
+</script>
+</body>
+</html>
