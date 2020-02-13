@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/hello-world/hello-world.iml" filepath="$PROJECT_DIR$/hello-world/hello-world.iml" />
+      <module fileurl="file://$PROJECT_DIR$/vue-cli-learning/vue-cli-learning.iml" filepath="$PROJECT_DIR$/vue-cli-learning/vue-cli-learning.iml" />
       <module fileurl="file://$PROJECT_DIR$/vue-learning/vue-learning.iml" filepath="$PROJECT_DIR$/vue-learning/vue-learning.iml" />
     </modules>
   </component>
