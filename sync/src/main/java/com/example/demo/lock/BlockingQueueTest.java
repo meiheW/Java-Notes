@@ -1,8 +1,7 @@
 package com.example.demo.lock;
 
 import java.util.Comparator;
-import java.util.concurrent.ArrayBlockingQueue;
-import java.util.concurrent.PriorityBlockingQueue;
+import java.util.concurrent.*;
 
 /**
  * @author meihewang
@@ -10,15 +9,20 @@ import java.util.concurrent.PriorityBlockingQueue;
  */
 public class BlockingQueueTest {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         ArrayBlockingQueue<Integer> abq = new ArrayBlockingQueue<>(2);
         abq.add(1);
         abq.add(2);
+        abq.put(4);
 
         boolean offer = abq.offer(3);
         System.out.println(offer);
+        abq.remove(1);
 
         //
+        LinkedBlockingQueue<Integer> lbq = new LinkedBlockingQueue<>(2);
+        lbq.add(12);
+        lbq.remove(12);
 
         PriorityBlockingQueue<String> pbq = new PriorityBlockingQueue<>(11, new Comparator() {
             @Override
@@ -58,5 +62,21 @@ public class BlockingQueueTest {
         System.out.println(xxx);
         PriorityScoreStudent poll = xxx.poll();
         System.out.println(poll);
+
+        //Delay
+        DelayQueue<DelayElement> dq = new DelayQueue<>();
+        dq.offer(new DelayElement(1));
+        dq.poll();
+
+        //
+        SynchronousQueue sq = new SynchronousQueue();
+        sq.offer(1);
+        sq.poll();
+
+
+        //
+        LinkedBlockingDeque<Integer> lbd = new LinkedBlockingDeque();
+        lbd.add(1);
+
     }
 }
