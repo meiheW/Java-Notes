@@ -46,5 +46,17 @@ public class BlockingQueueTest {
         System.out.println(pbq.peek());
 
         System.out.println(pbq.toString());
+        //
+        PriorityScoreStudent pss = new PriorityScoreStudent("a", 1256);
+        PriorityScoreStudent psss = new PriorityScoreStudent("aa", 123);
+        PriorityScoreStudent pssss = new PriorityScoreStudent("aaa", 13);
+        PriorityBlockingQueue<PriorityScoreStudent> xxx = new PriorityBlockingQueue<>();
+        xxx.offer(pss);
+        xxx.offer(psss);
+        xxx.offer(pssss);
+
+        System.out.println(xxx);
+        PriorityScoreStudent poll = xxx.poll();
+        System.out.println(poll);
     }
 }
