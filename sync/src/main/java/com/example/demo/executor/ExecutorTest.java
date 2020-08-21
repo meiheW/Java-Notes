@@ -13,9 +13,9 @@ public class ExecutorTest {
 
 
     public static void main(String[] args) {
-        //ExecutorService executorService = Executors.newFixedThreadPool(3);
-
-        ExecutorService executorService = Executors.newSingleThreadExecutor();
+        ExecutorService executorService = Executors.newFixedThreadPool(3);
+        //ExecutorService executorService = Executors.newCachedThreadPool();
+        //ExecutorService executorService = Executors.newSingleThreadExecutor();
         executorService.execute(new Runnable() {
             @SneakyThrows
             @Override
