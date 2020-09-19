@@ -22,6 +22,32 @@ public class GuardObject {
         }
     }
 
+
+    /**
+     * 设置超时时间
+     * @param timeout 超时时间
+     * @return
+     */
+    public Object get(long timeout){
+        synchronized (this){
+            long start = System.currentTimeMillis();
+            long passTime = 0;
+            while (response == null){
+                if(passTime >= timeout){
+                    break;
+                }
+                try {
+                    this.wait(timeout-passTime);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                long now = System.currentTimeMillis();
+                passTime = now - start;
+            }
+            return response;
+        }
+    }
+
     public void setResponse(Object o){
         synchronized (this) {
             if (response == null) {
