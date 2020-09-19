@@ -8,7 +8,6 @@ public class Demo {
 
     public static void main(String[] args) throws InterruptedException {
         String s = "hello";
-        
         //会报异常，必须和synchronized共用
         s.wait();
     }
