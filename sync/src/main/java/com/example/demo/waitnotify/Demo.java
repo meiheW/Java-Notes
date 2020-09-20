@@ -10,6 +10,9 @@ public class Demo {
         String s = "hello";
         //会报异常，必须和synchronized共用
         s.wait();
+
+        Thread t = new Thread();
+        t.join();
     }
 
 

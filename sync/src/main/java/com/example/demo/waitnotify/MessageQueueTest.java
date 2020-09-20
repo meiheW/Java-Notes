@@ -1,5 +1,7 @@
 package com.example.demo.waitnotify;
 
+import java.util.concurrent.locks.LockSupport;
+
 import static java.lang.Thread.sleep;
 
 /**
@@ -39,6 +41,8 @@ public class MessageQueueTest {
             }
         }, "thread-consumer").start();
 
+        LockSupport.park();
+        LockSupport.unpark(Thread.currentThread());
 
 
     }
