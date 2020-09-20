@@ -11,6 +11,7 @@ public class ReentrantLockTest {
 
     public static void main(String[] args) {
         ReentrantLock reentrantLock = new ReentrantLock();
+        reentrantLock.tryLock();
 
     }
 
