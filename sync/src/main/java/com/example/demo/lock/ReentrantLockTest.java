@@ -1,5 +1,7 @@
 package com.example.demo.lock;
 
+import java.util.concurrent.locks.Condition;
+import java.util.concurrent.locks.LockSupport;
 import java.util.concurrent.locks.ReentrantLock;
 
 /**
@@ -9,10 +11,12 @@ import java.util.concurrent.locks.ReentrantLock;
 public class ReentrantLockTest {
 
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         ReentrantLock reentrantLock = new ReentrantLock();
         reentrantLock.tryLock();
-
+        Condition condition = reentrantLock.newCondition();
+        reentrantLock.lock();
+        condition.await();
     }
 
 
