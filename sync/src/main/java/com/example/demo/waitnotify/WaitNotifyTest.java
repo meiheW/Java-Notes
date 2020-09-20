@@ -4,7 +4,6 @@ import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.ReentrantLock;
 
 /**
- * 依次打印ABC
  * @author meihewang
  * @date 2020/09/20  21:25
  */
